@@ -1,15 +1,17 @@
 $blackcolor: #000000;
-$orangecolor: mix(#F9804B, #FE9013);
-$darkorangecolor: #E47209;
-$greencolor: #4B9200;
+$orangecolor: #FE9013;
 $yellowcolor: #FFEE2E;
+$darkorange: #E47209;
+$green: #4B9200;
 $orangeGradient: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+$darkorangecolor: linear-gradient(#E47209, #E47209);
+$greencolor: linear-gradient(#4B9200, #4B9200);
 
 @mixin button {
     width: 298px;
     height: 54px;
     border-radius: 25px;
-    background-color: $orangecolor;
+    background: $orangeGradient;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
@@ -24,11 +26,11 @@ $orangeGradient: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
 
     &:hover {
         cursor: pointer;
-        background-color: $darkorangecolor;
+        background: $darkorangecolor;
     }
 
     &:active {
-        background-color: $greencolor;
+        background: $greencolor;
     }
 }
 
@@ -498,11 +500,11 @@ border-radius: 50%;
 
         &:hover {
         cursor: pointer;
-        background-color: $darkorangecolor;
+        background: $darkorangecolor;
     }
 
     &:active {
-        background-color: $greencolor;
+        background: $greencolor;
     }
 }
 
@@ -815,23 +817,24 @@ linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248,
             border: 0.7px solid $orangecolor;
             padding: 10px;
 
-
-            &:valid {
-                border: 0.7px solid $orangecolor;
+            &:focus:valid {
+                outline: none;
+                border: 0.7px solid #4B9200;
                 color: #4B9200;
             }
 
-            &:valid + input[type="submit"] {
+            &:focus:valid + input[type="submit"] {
                 border-color: #4B9200;
                 color: #4B9200;
             }
 
-            &:invalid {
-                color: $orangecolor;
-                border-color: $orangecolor;
+            &:focus:invalid {
+                outline: none;
+                color: #D31414;
+                border-color: #D31414;
             }
 
-            &:invalid + input[type="submit"] {
+            &:focus:invalid + input[type="submit"] {
                 border: 1px solid #D31414;
                 color: #D31414;
             }
@@ -854,6 +857,7 @@ linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248,
 }
 }
 
+
 .networks-section {
     @include flexbox($direction: column, $main: flex-start, $cross: flex-start);
     grid-row: 7 / span 4;
@@ -868,19 +872,19 @@ linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248,
         align-items: center;
 
     &:hover {
-            color: $darkorangecolor;
+            color: $darkorange;
         }
 
     &:hover .network-icon {
-        background-color: $darkorangecolor;
+        background-color: $darkorange;
     }
 
     &:active {
-        color: $greencolor;
+        color: $green;
     }
 
     &:active .network-icon {
-        background-color: $greencolor;
+        background-color: $green;
     }
     }
 

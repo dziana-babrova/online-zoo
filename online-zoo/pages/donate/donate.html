@@ -104,16 +104,16 @@
                             <div class="price-item">$50</div>
                             <div class="price-item">$25</div>
                         </div>
-                        <input class="price-input" type="number" name="" id="" placeholder="Another amount" max="9999">
+                        <input pattern="^[0-9]+$" class="price-input" type="number" name="" id="" placeholder="Another amount" min="1" max="9999">
                         <form class="payment-section">
                             <div class="payment-item">
-                        <div class="checkbox"></div>
-                        <input type="radio" name="Mothly" id="Mothly">
+                        <!-- <div class="checkbox"></div> -->
+                        <input class="radio" type="radio" name="radio-group" id="Mothly">
                         <label class="payment-type" for="Mothly">Monthly</label>
                         </div>
                             <div class="payment-item">
-                        <div class="checkbox checked"></div>
-                        <input type="radio" name="Once" id="Once" checked>
+                        <!-- <div class="checkbox checked"></div> -->
+                        <input class="radio" type="radio" name="radio-group" id="Once" checked>
                         <label class="payment-type" for="Once">Once</label>
                         </div>
                         </form>
@@ -133,7 +133,7 @@
                                         <div class="subscription-section">
                                             <div class="subscription-title">Subscribe to our news</div>
                                             <form class="subscription-form">
-                                                <input pattern="/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/" type="email" name="Enter your email" id="" placeholder="Enter your email">
+                                                <input pattern="/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/" type="email" name="Enter your email" id="" placeholder="Enter your email" required>
                                                 <input type="submit" value="Submit">
                                             </form>
                                         </div>

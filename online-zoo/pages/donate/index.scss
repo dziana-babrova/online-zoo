@@ -1,14 +1,17 @@
 $blackcolor: #000000;
-$orangecolor: mix(#F9804B, #FE9013);
-$darkorangecolor: #E47209;
-$greencolor: #4B9200;
+$orangecolor: #FE9013;
 $yellowcolor: #FFEE2E;
+$darkorange: #E47209;
+$green: #4B9200;
+$orangeGradient: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+$darkorangecolor: linear-gradient(#E47209, #E47209);
+$greencolor: linear-gradient(#4B9200, #4B9200);
 
 @mixin button {
     width: 298px;
     height: 54px;
     border-radius: 25px;
-    background-color: $orangecolor;
+    background: $orangeGradient;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 500;
@@ -23,11 +26,11 @@ $yellowcolor: #FFEE2E;
 
     &:hover {
         cursor: pointer;
-        background-color: $darkorangecolor;
+        background: $darkorangecolor;
     }
 
     &:active {
-        background-color: $greencolor;
+        background: $greencolor;
     }
 }
 
@@ -239,24 +242,24 @@ body {
             border: 0.7px solid $orangecolor;
             padding: 10px;
 
-            &:valid {
+            &:focus:valid {
                 outline: none;
-                border: 0.7px solid $orangecolor;
+                border: 0.7px solid #4B9200;
                 color: #4B9200;
             }
 
-            &:valid + input[type="submit"] {
+            &:focus:valid + input[type="submit"] {
                 border-color: #4B9200;
                 color: #4B9200;
             }
 
-            &:invalid {
+            &:focus:invalid {
                 outline: none;
-                color: $orangecolor;
-                border-color: $orangecolor;
+                color: #D31414;
+                border-color: #D31414;
             }
 
-            &:invalid + input[type="submit"] {
+            &:focus:invalid + input[type="submit"] {
                 border: 1px solid #D31414;
                 color: #D31414;
             }
@@ -304,19 +307,19 @@ body {
         align-items: center;
 
         &:hover {
-            color: $darkorangecolor;
+            color: $darkorange;
         }
 
         &:hover .network-icon {
-            background-color: $darkorangecolor;
+            background-color: $darkorange;
         }
 
         &:active {
-            color: $greencolor;
+            color: $green;
         }
 
         &:active .network-icon {
-            background-color: $greencolor;
+            background-color: $green;
         }
 
     }
@@ -337,11 +340,11 @@ body {
     grid-row: 10;
     height: 30px;
     place-self: end;
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 140%;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
 
     .navigation-list {
         margin: 0;
@@ -352,12 +355,12 @@ line-height: 140%;
     grid-column: 17 / span 3;
     grid-row: -3 / span 2;
     font-family: 'Roboto';
-font-style: normal;
-font-weight: 100;
-font-size: 16px;
-line-height: 170%;
-color: #FFFFFF;
-place-self: center end;
+    font-style: normal;
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 170%;
+    color: #FFFFFF;
+    place-self: center end;
 }
 
 .main-section {
@@ -575,7 +578,7 @@ color: #333B41;
     display: block;
     margin: 0 auto;
     padding-left: 9px;
-    padding-right: 10px;
+    padding-right: 20px;
     width: 268px;
     height: 54px;
     border: 1px solid #929699;
@@ -595,6 +598,16 @@ color: #333B41;
     &:focus {
         border: 1px solid #929699;
         outline: none;
+    }
+
+    &:valid:focus {
+        border: 1px solid #4B9200;
+        color: #4B9200
+    }
+
+    &:invalid:focus {
+        border: 1px solid #D31414;
+        color: #D31414
     }
 }
 
@@ -640,18 +653,56 @@ input[type=number] {
     color: #333B41;
 }
 
-.checkbox {
-    box-sizing: border-box;
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label
+{
+    position: relative;
+    padding-left: 28px;
+    cursor: pointer;
+    line-height: 20px;
+    display: inline-block;
+    color: #666;
+}
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 16px;
     height: 16px;
-    background-color: transparent;
-    border-radius: 50%;
     border: 1px solid #FE9013;
+    border-radius: 100%;
+    background: transparent;
 }
-
-.checked {
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background: #4B9200;
     border: 1px solid #4B9200;
-    background-color: #4B9200;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+[type="radio"]:not(:checked) + label:after {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
 }
 
 .feed-friend-button {

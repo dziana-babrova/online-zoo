@@ -51,7 +51,7 @@ body {
   text-decoration: none;
 }
 .logo-container:hover {
-  border: 1px solid #fc882f;
+  border: 1px solid #FE9013;
   transform: scale(1.1);
 }
 
@@ -69,7 +69,7 @@ body {
   color: #FFFFFF;
 }
 .logo:hover {
-  color: #fc882f;
+  color: #FE9013;
 }
 
 .bamboo {
@@ -111,10 +111,10 @@ body {
   color: white;
 }
 .navigation-list li a:hover {
-  color: #fc882f;
+  color: #FE9013;
 }
 .navigation-list .active {
-  color: #fc882f;
+  color: #FE9013;
 }
 
 .figma-link {
@@ -134,7 +134,7 @@ body {
   text-decoration: none;
 }
 .figma-link a:hover {
-  color: #fc882f;
+  color: #FE9013;
 }
 
 .feedback-button, .donate-button {
@@ -142,7 +142,7 @@ body {
   width: 298px;
   height: 54px;
   border-radius: 25px;
-  background-color: #fc882f;
+  background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
   font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
@@ -159,10 +159,10 @@ body {
 }
 .feedback-button:hover, .donate-button:hover {
   cursor: pointer;
-  background-color: #E47209;
+  background: linear-gradient(#E47209, #E47209);
 }
 .feedback-button:active, .donate-button:active {
-  background-color: #4B9200;
+  background: linear-gradient(#4B9200, #4B9200);
 }
 
 .footer-wrapper {
@@ -223,24 +223,24 @@ body {
   font-size: 16px;
   line-height: 140%;
   color: #BDBDBD;
-  border: 0.7px solid #fc882f;
+  border: 0.7px solid #FE9013;
   padding: 10px;
 }
-.subscription-section .subscription-form input[type=email]:valid {
+.subscription-section .subscription-form input[type=email]:focus:valid {
   outline: none;
-  border: 0.7px solid #fc882f;
+  border: 0.7px solid #4B9200;
   color: #4B9200;
 }
-.subscription-section .subscription-form input[type=email]:valid + input[type=submit] {
+.subscription-section .subscription-form input[type=email]:focus:valid + input[type=submit] {
   border-color: #4B9200;
   color: #4B9200;
 }
-.subscription-section .subscription-form input[type=email]:invalid {
+.subscription-section .subscription-form input[type=email]:focus:invalid {
   outline: none;
-  color: #fc882f;
-  border-color: #fc882f;
+  color: #D31414;
+  border-color: #D31414;
 }
-.subscription-section .subscription-form input[type=email]:invalid + input[type=submit] {
+.subscription-section .subscription-form input[type=email]:focus:invalid + input[type=submit] {
   border: 1px solid #D31414;
   color: #D31414;
 }
@@ -583,7 +583,7 @@ body {
   display: block;
   margin: 0 auto;
   padding-left: 9px;
-  padding-right: 10px;
+  padding-right: 20px;
   width: 268px;
   height: 54px;
   border: 1px solid #929699;
@@ -603,6 +603,14 @@ body {
 .price-input:focus {
   border: 1px solid #929699;
   outline: none;
+}
+.price-input:valid:focus {
+  border: 1px solid #4B9200;
+  color: #4B9200;
+}
+.price-input:invalid:focus {
+  border: 1px solid #D31414;
+  color: #D31414;
 }
 
 input::-webkit-outer-spin-button,
@@ -653,25 +661,67 @@ input[type=number] {
   color: #333B41;
 }
 
-.checkbox {
-  box-sizing: border-box;
-  width: 16px;
-  height: 16px;
-  background-color: transparent;
-  border-radius: 50%;
-  border: 1px solid #FE9013;
+[type=radio]:checked,
+[type=radio]:not(:checked) {
+  position: absolute;
+  left: -9999px;
 }
 
-.checked {
+[type=radio]:checked + label,
+[type=radio]:not(:checked) + label {
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  line-height: 20px;
+  display: inline-block;
+  color: #666;
+}
+
+[type=radio]:checked + label:before,
+[type=radio]:not(:checked) + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #FE9013;
+  border-radius: 100%;
+  background: transparent;
+}
+
+[type=radio]:checked + label:after,
+[type=radio]:not(:checked) + label:after {
+  content: "";
+  width: 16px;
+  height: 16px;
+  background: #4B9200;
   border: 1px solid #4B9200;
-  background-color: #4B9200;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+[type=radio]:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+[type=radio]:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
 }
 
 .feed-friend-button {
   width: 298px;
   height: 54px;
   border-radius: 25px;
-  background-color: #fc882f;
+  background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
   font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
@@ -687,10 +737,10 @@ input[type=number] {
 }
 .feed-friend-button:hover {
   cursor: pointer;
-  background-color: #E47209;
+  background: linear-gradient(#E47209, #E47209);
 }
 .feed-friend-button:active {
-  background-color: #4B9200;
+  background: linear-gradient(#4B9200, #4B9200);
 }
 
 .section-note {

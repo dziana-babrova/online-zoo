@@ -48,7 +48,7 @@
   text-decoration: none;
 }
 .logo-container:hover {
-  border: 1px solid #fc882f;
+  border: 1px solid #FE9013;
   transform: scale(1.1);
 }
 
@@ -65,7 +65,7 @@
   color: #FFFFFF;
 }
 .logo:hover {
-  color: #fc882f;
+  color: #FE9013;
 }
 
 .bamboo {
@@ -108,10 +108,10 @@
   color: white;
 }
 .navigation-list li a:hover {
-  color: #fc882f;
+  color: #FE9013;
 }
 .navigation-list li:nth-child(1) a {
-  color: #fc882f;
+  color: #FE9013;
 }
 
 .figma-link {
@@ -131,7 +131,7 @@
   text-decoration: none;
 }
 .figma-link a:hover {
-  color: #fc882f;
+  color: #FE9013;
 }
 
 .watch-online-section {
@@ -180,7 +180,7 @@
   width: 298px;
   height: 54px;
   border-radius: 25px;
-  background-color: #fc882f;
+  background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
   font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
@@ -198,10 +198,10 @@
 }
 .watch-button:hover {
   cursor: pointer;
-  background-color: #E47209;
+  background: linear-gradient(#E47209, #E47209);
 }
 .watch-button:active {
-  background-color: #4B9200;
+  background: linear-gradient(#4B9200, #4B9200);
 }
 
 .section2-wrapper {
@@ -497,7 +497,7 @@
 .arrow {
   width: 62px;
   height: 62px;
-  background: #fc882f;
+  background: #FE9013;
   border-radius: 50%;
   left: 0;
   display: flex;
@@ -508,10 +508,10 @@
 }
 .arrow:hover {
   cursor: pointer;
-  background-color: #E47209;
+  background: linear-gradient(#E47209, #E47209);
 }
 .arrow:active {
-  background-color: #4B9200;
+  background: linear-gradient(#4B9200, #4B9200);
 }
 
 .arrow-left {
@@ -538,7 +538,7 @@
   width: 298px;
   height: 54px;
   border-radius: 25px;
-  background-color: #fc882f;
+  background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
   font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
@@ -554,10 +554,10 @@
 }
 .choose-button:hover {
   cursor: pointer;
-  background-color: #E47209;
+  background: linear-gradient(#E47209, #E47209);
 }
 .choose-button:active {
-  background-color: #4B9200;
+  background: linear-gradient(#4B9200, #4B9200);
 }
 
 .section4-container {
@@ -712,7 +712,7 @@
   width: 298px;
   height: 54px;
   border-radius: 25px;
-  background-color: #fc882f;
+  background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
   font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
@@ -729,10 +729,10 @@
 }
 .feed-button:hover {
   cursor: pointer;
-  background-color: #E47209;
+  background: linear-gradient(#E47209, #E47209);
 }
 .feed-button:active {
-  background-color: #4B9200;
+  background: linear-gradient(#4B9200, #4B9200);
 }
 
 .leave-element {
@@ -891,7 +891,7 @@
   width: 298px;
   height: 54px;
   border-radius: 25px;
-  background-color: #fc882f;
+  background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
   font-family: "Roboto";
   font-style: normal;
   font-weight: 500;
@@ -908,10 +908,10 @@
 }
 .feedback-button:hover, .donate-button:hover {
   cursor: pointer;
-  background-color: #E47209;
+  background: linear-gradient(#E47209, #E47209);
 }
 .feedback-button:active, .donate-button:active {
-  background-color: #4B9200;
+  background: linear-gradient(#4B9200, #4B9200);
 }
 
 .footer-wrapper {
@@ -973,22 +973,24 @@
   line-height: 140%;
   text-align: start;
   color: #bdbdbd;
-  border: 0.7px solid #fc882f;
+  border: 0.7px solid #FE9013;
   padding: 10px;
 }
-.subscription-section .subscription-form input[type=email]:valid {
-  border: 0.7px solid #fc882f;
+.subscription-section .subscription-form input[type=email]:focus:valid {
+  outline: none;
+  border: 0.7px solid #4B9200;
   color: #4B9200;
 }
-.subscription-section .subscription-form input[type=email]:valid + input[type=submit] {
+.subscription-section .subscription-form input[type=email]:focus:valid + input[type=submit] {
   border-color: #4B9200;
   color: #4B9200;
 }
-.subscription-section .subscription-form input[type=email]:invalid {
-  color: #fc882f;
-  border-color: #fc882f;
+.subscription-section .subscription-form input[type=email]:focus:invalid {
+  outline: none;
+  color: #D31414;
+  border-color: #D31414;
 }
-.subscription-section .subscription-form input[type=email]:invalid + input[type=submit] {
+.subscription-section .subscription-form input[type=email]:focus:invalid + input[type=submit] {
   border: 1px solid #D31414;
   color: #D31414;
 }
