@@ -42,6 +42,15 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     flex-wrap: $wrap;
 }
 
+@mixin robotoFont($weight: 400, $height: 120%, $size: 16px, $align: center, $color: #FFFFFF) {
+    font-family: 'Roboto', sans-serif;
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $height;
+    text-align: $align;
+    color: $color;
+}
+
 body {
      background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
 }
@@ -59,11 +68,18 @@ body {
     width: 100%;
     height: 385px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+    @media screen and (max-width: 1220px) {
+        height: 390px;
+        background-position: 30%;
+    }
 }
 
 .header, .footer {
     width: 100%;
     background-color: $blackcolor;
+    position: relative;
+    z-index: 2;
 }
 
 .header-container, .footer-container {
@@ -73,7 +89,7 @@ body {
 }
 
 .footer-container {
-    padding-top: 41px;
+    padding-top: 37px;
     padding-bottom: 50px;
 }
 
@@ -131,17 +147,16 @@ body {
         justify-items: center;
         flex-flow: row wrap;
         list-style-type: none;
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 140%;
+        @include robotoFont($weight: 500, $height: 140%, $align: start);
+        gap: 58px;
         padding: 0;
         margin: 29px 0px;
 
-        li {
-            padding-right: 58px;
+            @media screen and (max-width: 1150px) {
+                gap: 48px;
+            }
 
+        li {
             a {
                 text-decoration: none;
                 color: white;
@@ -152,9 +167,12 @@ body {
             }
         }
 
-            .active {
+
+        .active {
+            a {
             color: $orangecolor;
             }
+        }
     }
 
     .figma-link {
@@ -187,6 +205,8 @@ body {
     }
 
 .footer-wrapper {
+    width: 100%;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, 1fr);
     grid-template-rows: repeat(10, 1fr);
@@ -198,11 +218,16 @@ body {
 }
 
     .donate-button {
-        margin-top: 12px;
+        text-decoration: none;
+        margin-top: 10px;
         margin-bottom: 0px;
         margin-right: 101px;
         grid-row: 4 / span 2;
         grid-column: 1 / span 5;
+
+        @media screen and (max-width: 1220px) {
+            margin-top: 14px;
+        }
     }
 }
 
@@ -211,16 +236,17 @@ body {
     height: 85px;
     grid-row: 1 / span 4;
     grid-column: 15 / span 5;
-    place-self: start center;
+    place-self: start end;
     margin-left: 15px;
 
+    @media screen and (max-width: 1220px) {
+        margin-top: 5px;
+        margin-right: 32px;
+    }
+
+
     .subscription-title {
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 24px;
-        line-height: 120%;
-        color: white;
+        @include robotoFont($size:24px, $align: start);
     }
 
     .subscription-form {
@@ -233,12 +259,7 @@ body {
             height: 42px;
             border-radius: 2px;
             background-color: #000000;
-            font-family: 'Roboto';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 140%;
-            color: #BDBDBD;
+            @include robotoFont($height: 140%, $align: start, $color: #bdbdbd);
             border: 0.7px solid $orangecolor;
             padding: 10px;
 
@@ -272,96 +293,97 @@ body {
             background: #F1F3F2;
             border: 1px solid #4B9200;
             border-radius: 5px;
-            font-family: 'Roboto';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 140%;
-            color: #4B9200;
+            @include robotoFont($height: 140%, $color: #4b9200);
 
             &:hover, &:active {
                 cursor: pointer;
                 background-color: rgba(255, 255, 255, 0.801);
         }
-
         }
 }
 }
 
+
 .networks-section {
     @include flexbox($direction: column, $main: flex-start, $cross: flex-start);
     grid-row: 7 / span 4;
-    margin-top: 1px;
+    margin: 2px 0;
+
 
     .network {
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 140%;
-        color: #FFFFFF;
+        @include robotoFont($height: 140%, $align: start);
         text-decoration: none;
         display: flex;
         column-gap: 10px;
         padding-bottom: 10px;
         align-items: center;
 
-        &:hover {
+        @media screen and (max-width:1220px) {
+            gap: 12px;
+        }
+
+    &:hover {
             color: $darkorange;
         }
 
-        &:hover .network-icon {
-            background-color: $darkorange;
-        }
+    &:hover .network-icon {
+        background-color: $darkorange;
+    }
 
-        &:active {
-            color: $green;
-        }
+    &:active {
+        color: $green;
+    }
 
-        &:active .network-icon {
-            background-color: $green;
-        }
-
+    &:active .network-icon {
+        background-color: $green;
+    }
     }
 
     .network-icon {
         border-radius: 50%;
         width:26px;
         height: 26px;
-        background: rgba(196, 196, 196, 0.5);
+        background-color: rgba(196, 196, 196, 0.5);
         @include flexbox();
     }
 
 }
 
 .navigation-footer {
-    margin-right: 35px;
-    grid-column: 6 / span 10;
+    margin-right: 19px;
+    grid-column: 5 / 16;
     grid-row: 10;
     height: 30px;
-    place-self: end;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 140%;
+    align-self: start;
+    justify-self: center;
+
+    @include robotoFont($height: 140%, $size: 16px, $align: start, $color: $blackcolor);
 
     .navigation-list {
         margin: 0;
     }
+
+    @media screen and (max-width: 1220px) {
+        margin-right: 0px;
+        margin-left: 40px;
+        grid-column: 4 / 17;
+        place-self: start;
+    }
+
 }
 
 .created {
     grid-column: 17 / span 3;
     grid-row: -3 / span 2;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 100;
-    font-size: 16px;
-    line-height: 170%;
-    color: #FFFFFF;
+    @include robotoFont($weight: 100, $height: 190%, $align: start);
     place-self: center end;
+
+    @media screen and (max-width:1220px) {
+            place-self: center end;
+            padding-left: 25px;
+    }
 }
+
 
 .main-section {
     background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
@@ -377,6 +399,11 @@ body {
     padding-top: 40px;
     margin-top: 0;
     margin-bottom: 10px;
+
+    @media screen and (max-width: 1220px) {
+        padding-right: 172px;
+        margin-bottom: 32px;
+    }
 }
 
 .main-section-text {
@@ -388,6 +415,11 @@ body {
     color: #FFFFFF;
     letter-spacing: 0.02px;
     margin-bottom: 42px;
+
+    @media screen and (max-width: 1220px) {
+        line-height: 140%;
+        font-weight: 500;
+    }
 }
 
 .main-section-subtitle {
@@ -399,6 +431,10 @@ body {
     color: #FE9013;
     padding-bottom: 60px;
     margin-bottom: 0;
+
+    @media screen and (max-width: 1220px) {
+        padding-bottom: 40px;
+    }
 }
 
 .inner-block {
@@ -408,6 +444,11 @@ body {
     border-radius: 20px;
     padding: 40px 92px 62px;
     margin-bottom: 180px;
+
+    @media screen and (max-width: 1220px) {
+        padding: 20px 44px 45.98px 47px;
+        margin-bottom: 30px;
+    }
 }
 
 .inner-block-header {
@@ -420,21 +461,34 @@ body {
     line-height: 120%;
     text-align: center;
     color: #FE9013;
+
+    @media screen and (max-width: 1220px) {
+        margin-bottom: 10px;
+    }
 }
 
 .inner-block-text {
-font-family: 'Roboto';
-font-style: normal;
-font-weight: 400;
-font-size: 24px;
-line-height: 120%;
-color: #333B41;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+    color: #333B41;
+
+    @media screen and (max-width: 1220px) {
+        margin-top: 10px;
+    }
 }
 
 .images-container {
     @include flexbox();
     gap: 55px;
     margin-top: 60px;
+
+    @media screen and (max-width: 1220px) {
+        margin-top: 62px;
+        margin-right: 5px;
+    }
 }
 
 .panda-image {
@@ -450,6 +504,11 @@ color: #333B41;
     height: 246px;
     @include flexbox($direction: column);
     gap: 15px;
+
+    @media screen and (max-width: 1220px) {
+        gap: 10px;
+
+    }
 }
 
 .meals-number-block {
@@ -499,6 +558,11 @@ color: #333B41;
     background: #404950;
     border-radius: 2px;
     @include flexbox($main: space-between, $cross: flex-start);
+
+    @media screen and (max-width: 1220px) {
+        padding: 0 0px;
+        width: 95.5%;
+    }
 }
 
 .selection-bar {
@@ -510,7 +574,13 @@ color: #333B41;
     position: absolute;
     top: 50%;
     left: 2.5%;
+
+    @media screen and (max-width: 1220px) {
+        width: 96.2%;
+        left: 2%;
+    }
 }
+
 
 .step {
     cursor: pointer;
@@ -524,8 +594,12 @@ color: #333B41;
     transition: all 0.5 linear;
 
     &:hover {
+        .step-mark {
         transform: scale(1.1);
+        background-color: $darkorange;
     }
+    }
+
 }
 
 .step-mark {
@@ -533,6 +607,7 @@ color: #333B41;
     width: 10px;
     height: 10px;
     border-radius: 50%;
+
 }
 
 .step-active {
@@ -548,10 +623,27 @@ color: #333B41;
     @include flexbox();
 }
 
+.small-desktop-absent {
+
+    @media screen and (max-width: 1220px) {
+        display: none;
+    }
+}
+
+.large-desktop-absent {
+    @media screen and (min-width: 1221px) {
+        display: none;
+    }
+}
+
 .price-bar {
     margin-top: 6px;
     width: 100%;
-    @include flexbox($main: space-between, $cross: flex-end)
+    @include flexbox($main: space-between, $cross: flex-end);
+
+    @media screen and (max-width: 1220px) {
+        margin: 4px 17px;
+    }
 }
 
 .price-item {
@@ -566,6 +658,11 @@ color: #333B41;
     line-height: 140%;
     text-transform: uppercase;
     color: #333B41;
+
+    @media screen and (max-width: 1220px) {
+        width: 72px;
+        margin-bottom: 45px;
+    }
 }
 
 .price-selected {
@@ -594,6 +691,10 @@ color: #333B41;
     background-repeat: no-repeat;
     background-position: 248px;
     margin-bottom: 24px;
+
+    @media screen and (max-width: 1220px) {
+
+    }
 
     &:focus {
         border: 1px solid #929699;
@@ -627,6 +728,12 @@ input[type=number] {
     width: 268px;
     gap: 38px;
     @include flexbox();
+
+    @media screen and (max-width: 1220px) {
+        width: 218px;
+        gap: 38px;
+        justify-content: flex-start;
+    }
 
     .payment-item {
         width: 84px;
