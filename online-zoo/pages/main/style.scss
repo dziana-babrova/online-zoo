@@ -51,11 +51,16 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     color: $color;
 }
 
+
 .wrapper {
     box-sizing: border-box;
     padding: 0 30px;
     max-width: 1220px;
     margin: 0 auto;
+
+    @media screen and (max-width: 999px) {
+        padding: 0 20px;
+    }
 }
 
 .image-container {
@@ -69,7 +74,9 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         background-size: 117%;
         background-position: center;
     }
+
 }
+
 
 .header, .footer {
     width: 100%;
@@ -78,15 +85,46 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     z-index: 2;
 }
 
+
 .header-container, .footer-container {
     width: 100%;
     position: relative;
     @include flexbox($main: flex-start, $wrap: nowrap);
 }
 
+.header-container {
+    .logo-container {
+        @media screen and (max-width: 800px) {
+            border: none;
+            margin: 2.5px 0px;
+            width: 46.86px;
+            height: 29.03px;
+            border: none;
+            padding: 0px;
+    }
+
+    .logo {
+        @media screen and (max-width: 800px) {
+            @include robotoFont($size: 12.2899px);
+            color: rgb(243, 243, 243);
+        }
+    }
+}
+}
+
+.footer-container {
+    .logo-container {
+            border: 0.5px solid rgba(255, 255, 255, 0.5);
+        }
+}
+
 .footer-container {
     padding-top: 37px;
     padding-bottom: 50px;
+
+    @media screen and (max-width: 800px) {
+        padding: 13px 20px;
+    }
 }
 
 .logo-container {
@@ -101,10 +139,6 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
     text-decoration: none;
-    &:hover {
-        border: 1px solid $orangecolor;
-        transform: scale(1.1);
-    }
 }
     .logo {
         margin: 0;
@@ -112,10 +146,6 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         grid-row: 1 / span 2;
         vertical-align:middle;
         @include robotoFont($size: 19.0145px);
-
-    &:hover {
-        color: $orangecolor;
-    }
     }
 
     .bamboo {
@@ -129,6 +159,10 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     .navigation-container {
         width: 87.5%;
         @include flexbox($main: space-between);
+
+            @media screen and (max-width: 800px) {
+                display: none;
+            }
     }
 
     .navigation-list {
@@ -144,6 +178,10 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
 
             @media screen and (max-width: 1150px) {
                 gap: 48px;
+            }
+
+            @media screen and (max-width: 800px) {
+                gap: 37px;
             }
 
         li {
@@ -192,11 +230,28 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         padding-top: 42.8px;
         padding-right: 85.75px;
     }
+
+    @media screen and (max-width: 999px) {
+        padding-top: 48.04px;
+        padding-right: 14.77px;
+    }
 }
 
 .label-area-container {
     padding-right: 8px;
     @include flexbox($direction: column, $main: center, $cross: center);
+
+    @media screen and (max-width: 999px) {
+        padding-right: 0px;
+        width: 100%;
+        @include flexbox($direction: row-reverse, $main: space-around, $cross: flex-end);
+    }
+
+    @media screen and (max-width: 999px) {
+        padding-right: 0px;
+        width: 100%;
+        @include flexbox($direction: row-reverse, $main: space-between, $cross: flex-end);
+    }
 }
 
 .watch-text {
@@ -213,7 +268,16 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         margin-bottom: 40.2px;
     }
 
+    @media screen and (max-width: 999px) {
+        font-size: 70.42px;
+        margin-bottom: 86.57px;
+    }
 
+    @media screen and (max-width: 800px) {
+        font-size: 54.42px;
+        margin-bottom: 86.57px;
+        margin-right: 5px;
+    }
 
 
     .accent {
@@ -240,10 +304,17 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         height: 367px;
     }
 
-    // @media screen and (max-width: 1150px) {
-    //     top: -10px;
-    //     left: 45.5%;
-    // }
+    @media screen and (max-width: 999px) {
+        bottom: 4.6px;
+        right: 55.34px;
+        width: 300px;
+        height: 300px;
+    }
+
+    @media screen and (max-width: 800px) {
+        width: 237.6px;
+        height: 237.6px;
+    }
 
 }
 
@@ -253,6 +324,10 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
 
     @media screen and (max-width: 1440px) {
         margin-bottom: 47px;
+    }
+
+    @media screen and (max-width: 800px) {
+        margin-bottom: 40px;
     }
 }
 
@@ -274,6 +349,20 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     @media screen and (max-width: 1440px) {
         display: none;
     }
+
+    @media screen and (max-width: 999px) {
+        display: block;
+        bottom: -15%;
+        width: 185px;
+        height: 476px;
+        background-image: url("./../../assets/flower_foto1_999.png");
+        background-position: top right;
+        overflow: hidden;
+    }
+
+    @media screen and (max-width: 800px) {
+        top: -15%;
+    }
 }
 
 .section2-container {
@@ -282,11 +371,21 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     display: grid;
     grid-template-columns: 610px 1fr;
     position: relative;
-    z-index: 2;
+    z-index: 1;
 
             @media screen and (max-width: 1220px) {
                 margin-top: 98px;
                 grid-template-columns: 455px 1fr;
+            }
+
+            @media screen and (max-width: 999px) {
+                margin-top: 98px;
+                grid-template-columns: 1fr;
+            }
+
+            @media screen and (max-width: 999px) {
+                margin-top: 60px;
+                grid-template-columns: 1fr;
             }
 
     .hat-man {
@@ -303,15 +402,29 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
                 background-position: center;
                 background-size: cover;
             }
+
+            @media screen and (max-width: 999px) {
+                display: none;
+            }
+
     }
 
     .hat-man-text {
+        z-index: 0;
         grid-column: 2;
         @include robotoFont($weight: 400, $height: 120%, $size: 16px, $align: start, $color: $blackcolor);
         margin-left: 87px;
 
         @media screen and (max-width: 1220px) {
             margin-left: 31px;
+        }
+
+        @media screen and (max-width: 999px) {
+            margin-right: 125px;
+        }
+
+        @media screen and (max-width: 800px) {
+            margin: 0px 105px 0px 0px;
         }
 
         .hat-man-title {
@@ -328,6 +441,7 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
             @media screen and (max-width: 1220px) {
                 letter-spacing: 0;
             }
+
         }
 
         .hat-man-text-title {
@@ -335,6 +449,10 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
             font-size: 24px;
             line-height: 120%;
             margin: 54px 0 0;
+
+            @media screen and (max-width: 800px) {
+                margin: 30px 0 20px;
+            }
         }
 
         .hat-man-main-text {
@@ -343,6 +461,10 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
 
             @media screen and (max-width: 1220px) {
                 letter-spacing: 0;
+            }
+
+            @media screen and (max-width: 800px) {
+                margin: 20px 0 80px;
             }
 
         }
@@ -374,6 +496,21 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         margin: 140px auto 80px;
     }
 
+    @media  screen and (max-width: 999px) {
+        width: 653px;
+        height: 801px;
+        column-gap: 65px;
+        row-gap: 92px;
+        transition: all 0.5 linear;
+        margin: 140px auto 80px;
+    }
+
+    @media  screen and (max-width: 800px) {
+        margin: 0px auto 60px;
+        width: 600px;
+        height: 756px;
+        column-gap: 29.76px;
+    }
 }
 
 .carousel-wrapper {
@@ -397,6 +534,13 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         height: 180px;
         background-size: cover;
     }
+
+    @media screen and (max-width: 800px) {
+        bottom: -100px;
+        width: 175px;
+        height: 131px;
+        background-size: cover;
+    }
 }
 
 .flower-left {
@@ -418,10 +562,17 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         background-size: cover;
     }
 
+    @media screen and (max-width: 800px) {
+        bottom: -100px;
+        left: -60px;
+        width: 195px;
+        height: 202px;
+        background-size: cover;
+    }
+
 }
 
 .carousel-item {
-    z-index: 2;
     position: relative;
     width:366px;
     height: 426px;
@@ -433,6 +584,11 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     @media  screen and (max-width: 1220px) {
         width:294px;
         height: 354px;
+    }
+
+    @media  screen and (max-width: 999px) {
+        width:285px;
+        height: 332px;
     }
 
 
@@ -471,6 +627,10 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     @media  screen and (max-width: 1220px) {
         height:294px;
     }
+
+    @media  screen and (max-width: 999px) {
+        height:285px;
+    }
 }
 
 .animal-caption {
@@ -484,11 +644,19 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     @media  screen and (max-width: 1220px) {
     height: 58px;
     }
+
+    @media  screen and (max-width: 999px) {
+    height: 45px;
+    }
 }
 
 .animal-caption-block {
     padding-left: 15px;
     @include flexbox($direction:column, $cross: flex-start, $main: center);
+
+    @media  screen and (max-width: 800px) {
+        padding-left: 12.47px;
+    }
 }
 
 .animal-name {
@@ -496,16 +664,31 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     text-transform: uppercase;
     letter-spacing: -0.05px;
     transition: all 0.5s linear;
+
+    @media  screen and (max-width: 800px) {
+        font-size: 12.47px;
+        line-height: 17.46px;
+    }
 }
 
 .animal-place {
     @include robotoFont($weight: 300, $size: 15px, $align: start, $color: $blackcolor);
     transition: all 0.5s linear;
+
+    @media  screen and (max-width: 800px) {
+        font-size: 11.69px;
+        line-height: 14.03px;
+    }
 }
 
 .animal-icon {
     width: 59px;
     height: 100%;
+
+    @media  screen and (max-width: 800px) {
+        width: 25.72px;
+        margin-right: 9.2px;
+    }
 }
 
 .panda {
@@ -521,6 +704,10 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         background-image: url(./../../assets/banana-bamboo_icon.png);
         background-repeat: no-repeat;
         background-position: center;
+
+    @media  screen and (max-width: 800px) {
+        background-size: contain;
+    }
     }
 }
 
@@ -537,6 +724,10 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         background-image: url(./../../assets/meet-fish_icon.png);
         background-repeat: no-repeat;
         background-position: center;
+
+        @media  screen and (max-width: 800px) {
+            background-size: contain;
+        }
     }
 
 }
@@ -554,6 +745,10 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         background-image: url(./../../assets/banana-bamboo_icon.png);
         background-repeat: no-repeat;
         background-position: center;
+
+        @media  screen and (max-width: 800px) {
+            background-size: contain;
+        }
     }
 
     @media  screen and (max-width: 1220px) {
@@ -576,6 +771,10 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         background-image: url(./../../assets/banana-bamboo_icon.png);
         background-repeat: no-repeat;
         background-position: center;
+
+        @media  screen and (max-width: 800px) {
+            background-size: contain;
+        }
     }
 
     @media  screen and (max-width: 1220px) {
@@ -597,6 +796,10 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         background-image: url(./../../assets/meet-fish_icon.png);
         background-repeat: no-repeat;
         background-position: center;
+
+        @media  screen and (max-width: 800px) {
+            background-size: contain;
+        }
     }
 
     @media  screen and (max-width: 1220px) {
@@ -618,6 +821,10 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         background-image: url(./../../assets/meet-fish_icon.png);
         background-repeat: no-repeat;
         background-position: center;
+
+        @media  screen and (max-width: 800px) {
+            background-size: contain;
+        }
     }
 
 }
@@ -635,6 +842,10 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         background-image: url(./../../assets/meet-fish_icon.png);
         background-repeat: no-repeat;
         background-position: center;
+
+        @media  screen and (max-width: 800px) {
+            background-size: contain;
+        }
     }
 
     @media  screen and (max-width: 1220px) {
@@ -656,6 +867,10 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         background-image: url(./../../assets/banana-bamboo_icon.png);
         background-repeat: no-repeat;
         background-position: center;
+
+        @media  screen and (max-width: 800px) {
+            background-size: contain;
+        }
     }
 
 }
@@ -698,6 +913,12 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
             transition: all 0.5 linear;
         }
 
+        @media  screen and (max-width: 800px) {
+            top: 39.5%;
+            left: 38%;
+            transition: all 0.5 linear;
+        }
+
 }
 
 .arrow-right {
@@ -717,6 +938,11 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
             transition: all 0.5 linear;
         }
 
+        @media  screen and (max-width: 800px) {
+            top: 39.5%;
+            left: 52%;
+            transition: all 0.5 linear;
+        }
 
 }
 
@@ -727,22 +953,27 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     @media  screen and (max-width: 1220px) {
         margin-bottom: 140px;
     }
+
+    @media  screen and (max-width: 800px) {
+        margin-bottom: 100px;
+    }
 }
 
 .section4-container {
     width: 100%;
     background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
     opacity: 0.9;
-    margin-bottom: 140px;
-
-    @media  screen and (max-width: 1220px) {
-        margin-bottom: 100px;
-    }
 }
 
 .section4-container-wrapper {
     position: relative;
     @include flexbox($direction: column, $cross: stretch);
+}
+
+    .section4-container-wrapper.wrapper {
+    @media  screen and (max-width: 800px) {
+        padding: 0;
+    }
 }
 
 .section4 {
@@ -754,6 +985,15 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     @media screen and (max-width: 1220px) {
         margin: 30px 0px 50px;
     }
+
+    @media screen and (max-width: 999px) {
+        padding: 10px 20px 60px;
+    }
+    @media screen and (max-width: 800px) {
+        padding: 10px 0 0;
+        margin: 20px 0px 20px;
+    }
+
 }
 
 .section4-title {
@@ -762,6 +1002,14 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
 
     @media screen and (max-width: 1220px) {
         margin: 30px auto 20px;
+    }
+
+    @media screen and (max-width: 999px) {
+        margin: 0 auto 20px;
+    }
+
+    @media screen and (max-width: 800px) {
+        font-size: 42px;
     }
 }
 
@@ -772,6 +1020,16 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     @media screen and (max-width: 1220px) {
         padding: 0 0 0 49px;
         margin: 20px auto;
+    }
+
+    @media screen and (max-width: 999px) {
+        padding: 0;
+        margin: 20px auto;
+    }
+
+    @media screen and (max-width: 800px) {
+        margin: 20px;
+        font-size: 22px;
     }
 }
 
@@ -784,6 +1042,16 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         margin: 20px auto 12px;
         padding: 0 100px 0 49px;
     }
+
+    @media screen and (max-width: 999px) {
+        padding: 0;
+        margin: 20px auto 10px;
+    }
+
+    @media screen and (max-width: 800px) {
+        margin: 20px 20px 10px;
+        font-size: 16px;
+    }
 }
 
 .section4-text-level2 {
@@ -793,6 +1061,16 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
 
     @media screen and (max-width: 1220px) {
         padding: 0 68px 0 49px;
+    }
+
+    @media screen and (max-width: 999px) {
+        padding: 0;
+        margin: 10px auto 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        margin: 10px 20px;
+        font-size: 16px;
     }
 }
 
@@ -814,15 +1092,36 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     @media screen and (max-width: 1220px) {
         margin-top: 40px;
     }
+
+    @media screen and (max-width: 800px) {
+        margin: 30px 20px 20px;
+    }
 }
 
 .how-it-works-section {
     margin: 40px 65px;
+    position: relative;
     @include flexbox($main: space-evenly);
 
     @media screen and (max-width: 1220px) {
-        @include flexbox($main: space-between);
+        @include flexbox($main: center);
+        gap: 130px;
         margin: 40px 88px;
+    }
+
+    @media screen and (max-width: 999px) {
+        @include flexbox($wrap: nowrap, $main: center);
+        margin: 40px 20px;
+        gap: 78px;
+    }
+
+    @media screen and (max-width: 999px) {
+        gap: 42px;
+    }
+
+    @media screen and (max-width: 800px) {
+        margin: 20px 32px 20px 20px;
+        gap: 42px;
     }
 }
 
@@ -830,6 +1129,8 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     width: 168px;
     height: 244px;
     @include flexbox($direction: column, $main: flex-start);
+    position: relative;
+    z-index: -1;
 }
 
 .work-item-image {
@@ -839,6 +1140,8 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     border-radius: 5px;
     box-sizing: border-box;
     background: $orangeGradient;
+    position: relative;
+    z-index: -1;
 }
 
 .work-item-wrapper {
@@ -858,20 +1161,34 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     margin-top: 30px;
 }
 
-.work-item1::after, .work-item2::after {
-    position: relative;
+.work-item3::before, .work-item2::before {
+    position: absolute;
+    left: -75%;
     margin: 62px 30px;
     content: url("./../../assets/arrow.png");
 
     @media screen and (max-width: 1220px) {
         margin: 62px 0;
-        left: 20%;
+        left: -60%;
     }
 
-    @media screen and (max-width: 1150px) {
-        margin: 62px 0;
-        left: 15%;
+    @media screen and (max-width: 999px) {
+        content: url("./../../assets/arrow_mobile.png");
+        top: -35%;
+        left: -50%;
+        position: absolute;
+        z-index: 5;
     }
+
+    @media screen and (max-width: 800px) {
+        left: -45%;
+        top: -33%;
+    }
+}
+
+.work-item1, .work-item2 {
+    position: relative;
+    z-index: -1;
 }
 
 .feed-button {
@@ -883,6 +1200,14 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     @media screen and (max-width: 1220px) {
     margin: 70px auto 50px;
     }
+
+    @media screen and (max-width: 999px) {
+    margin: 70px auto 0px;
+    }
+
+    @media screen and (max-width: 999px) {
+    margin: 40px auto 60px;
+    }
 }
 
 .leaf-element {
@@ -891,7 +1216,7 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     background-position: bottom right;
     position: absolute;
     right: 0;
-    bottom: -52%;
+    bottom: -14.5%;
     width: 200px;
     height: 400px;
 
@@ -899,12 +1224,21 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         width: 200px;
         height: 300px;
         background-size: cover;
-        bottom: -38%;
+        bottom: -14.5%;
+    }
+
+    @media screen and (max-width: 800px) {
+        width: 70px;
+        height: 200px;
+        background-size: cover;
+        bottom: -10%;
+        right: -7px;
     }
 }
 
 .section5-wrapper {
     position: relative;
+    overflow: hidden;
 }
 
 .section5-title {
@@ -913,6 +1247,10 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
 
     @media screen and (max-width: 1220px) {
         margin: 100px auto 30px;
+    }
+
+    @media screen and (max-width: 999px) {
+        margin: 60px auto 30px;
     }
 }
 
@@ -928,6 +1266,19 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         column-gap: 30px;
         margin-bottom: 20px;
     }
+
+    @media screen and (max-width: 999px) {
+        @include flexbox($direction: column, $main: center, $cross:space-between, $wrap: nowrap);
+        width: 653px;
+        row-gap: 15px;
+    }
+
+    @media screen and (max-width: 800px) {
+        justify-content: flex-start;
+        width: 100%;
+        height: 357px;
+        row-gap: 16px;
+    }
 }
 
 .testimonial-border {
@@ -936,13 +1287,21 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     width: 268px;
     height: 391px;
     border-radius: 20px;
-    background: linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%),
-linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
+    background: linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
+// linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
 
     @media screen and (max-width: 1220px) {
         width: 293px;
     }
 
+    @media screen and (max-width: 999px) {
+        padding: 0;
+        width: 600px;
+        height: 109px;
+        @include flexbox();
+        background: linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%),
+        linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
+    }
 }
 
 .testimonial {
@@ -959,12 +1318,28 @@ linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248,
         width: 289px;
         padding: 13px 15px 19px 15px;
     }
+
+    @media screen and (max-width: 999px) {
+        margin: 1px 0px;
+        width: 596px;
+        height: 105px;
+        padding: 0;
+    }
 }
 
 .testimonial-header {
     width: 100%;
     height: 37px;
     @include flexbox($main: flex-start, $cross: flex-start);
+
+    @media screen and (max-width: 999px) {
+        margin: 15px 29px 11px 12px;
+        width: 95%;
+    }
+
+    @media screen and (max-width: 800px) {
+        margin: 14px 29px 11px 11px;
+    }
 }
 
 .testimonial-icon {
@@ -999,6 +1374,7 @@ linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248,
 }
 
 .testimonial-text {
+    box-sizing: border-box;
     margin-top: 11px;
     margin-bottom: 19px;
     width: 100%;
@@ -1010,6 +1386,14 @@ linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248,
 
     @media screen and (max-width: 1220px) {
         margin-bottom: 19px;
+    }
+
+    @media screen and (max-width: 999px) {
+        box-sizing: border-box;
+        width: 95%;
+        height: 38px;
+        margin: 0px 29px 0px 18px;
+        margin-bottom: 25px;
     }
 }
 
@@ -1026,6 +1410,10 @@ linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248,
     @media screen and (max-width: 1220px) {
         width: 390px;
         margin: 0 auto 52px;
+    }
+
+    @media screen and (max-width: 999px) {
+        display: none;
     }
 
     .positioner {
@@ -1051,6 +1439,7 @@ linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248,
 }
 
 .feedback-button, .donate-button {
+        position: relative;
         @include button();
         border-radius: 5px;
         margin-bottom: 180px;
@@ -1058,7 +1447,18 @@ linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248,
         @media screen and (max-width: 1220px) {
             margin-bottom: 140px;
         }
+
+        @media screen and (max-width: 999px) {
+            margin: 0px auto 140px;
+        }
     }
+
+.feedback-button {
+    @media screen and (max-width: 800px) {
+        width: 240px;
+        margin: 40px auto 80px;
+    }
+}
 
 .footer-wrapper {
     width: 100%;
@@ -1066,6 +1466,10 @@ linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248,
     display: grid;
     grid-template-columns: repeat(auto-fit, 1fr);
     grid-template-rows: repeat(10, 1fr);
+
+    @media screen and (max-width: 800px) {
+        grid-template-rows: repeat(6, 1fr);
+    }
 
     .logo-footer {
         margin: 0;
@@ -1084,6 +1488,16 @@ linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248,
         @media screen and (max-width: 1220px) {
             margin-top: 14px;
         }
+
+        @media screen and (max-width: 999px) {
+            margin: 10px 0px 0px;
+        }
+
+        @media screen and (max-width: 800px) {
+            grid-row: 2 / span 3;
+            margin: 0 0 10px;
+            place-self: center start;
+        }
     }
 }
 
@@ -1098,6 +1512,16 @@ linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248,
     @media screen and (max-width: 1220px) {
         margin-top: 5px;
         margin-right: 32px;
+    }
+
+    @media screen and (max-width: 999px) {
+        grid-column: 7 / 14;
+        margin-right: 0;
+        place-self: start end;
+    }
+
+    @media screen and (max-width: 800px) {
+        display: none;
     }
 
 
@@ -1163,7 +1587,13 @@ linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248,
 .networks-section {
     @include flexbox($direction: column, $main: flex-start, $cross: flex-start);
     grid-row: 7 / span 4;
+    grid-column: 1;
     margin: 2px 0;
+
+    @media screen and (max-width:800px) {
+        grid-row: 1 / 5;
+        grid-column: 13 / span 1;
+    }
 
 
     .network {
@@ -1176,6 +1606,11 @@ linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248,
 
         @media screen and (max-width:1220px) {
             gap: 12px;
+        }
+
+        @media screen and (max-width:800px) {
+            place-self: end start;
+            padding-bottom: 20px;
         }
 
     &:hover {
@@ -1203,6 +1638,12 @@ linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248,
         @include flexbox();
     }
 
+    .network-name {
+        @media screen and (max-width: 800px) {
+            display: none;
+        }
+    }
+
 }
 
 .navigation-footer {
@@ -1221,8 +1662,23 @@ linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248,
 
     @media screen and (max-width: 1220px) {
         margin-right: 0px;
-        margin-left: 25px;
+        margin-left: 27px;
         grid-column: 4 / 17;
+        place-self: start;
+    }
+
+    @media screen and (max-width: 999px) {
+        margin-right: 0px;
+        margin-left: 25px;
+        grid-column: 2 / 10;
+        place-self: center end;
+    }
+
+    @media screen and (max-width: 800px) {
+        margin-right: 0px;
+        margin-left: 0px;
+        grid-row: 6 / 7;
+        grid-column: 1 / 8;
         place-self: start;
     }
 
@@ -1238,4 +1694,35 @@ linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248,
             place-self: center end;
             padding-left: 25px;
     }
+
+    @media screen and (max-width:999px) {
+        grid-column: 10 / span 4;
+    }
+
+    @media screen and (max-width:800px) {
+        grid-column: 10 / span 4;
+        grid-row: 5 / span 2;
+    }
 }
+
+// .header-wrapper {
+//     @media screen and (min-width: 801px) {
+//         display: none;
+//     }
+
+//     @media screen and (max-width: 800px) {
+//         background-color: white;
+//     }
+// }
+.mobile-header {
+    @media screen and (min-width: 801px) {
+        display: none;
+    }
+
+    @media screen and (max-width: 800px) {
+        display: block;
+        position: fixed;
+        z-index: 10;
+    }
+}
+

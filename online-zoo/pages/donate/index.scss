@@ -60,6 +60,10 @@ body {
     padding: 0 30px;
     max-width: 1220px;
     margin: 0 auto;
+
+    @media screen and (max-width: 999px) {
+        padding: 0 20px;
+    }
 }
 
 .image-container {
@@ -72,6 +76,11 @@ body {
     @media screen and (max-width: 1220px) {
         height: 390px;
         background-position: 30%;
+    }
+
+    @media screen and (max-width: 800px) {
+        height: 335px;
+        background-position: 37%;
     }
 }
 
@@ -88,9 +97,39 @@ body {
     @include flexbox($main: flex-start, $wrap: nowrap);
 }
 
+.header-container {
+    .logo-container {
+        @media screen and (max-width: 800px) {
+            border: none;
+            margin: 2.5px 0px;
+            width: 46.86px;
+            height: 29.03px;
+            border: none;
+            padding: 0px;
+    }
+
+    .logo {
+        @media screen and (max-width: 800px) {
+            @include robotoFont($size: 12.2899px);
+            color: rgb(243, 243, 243);
+        }
+    }
+}
+}
+
+.footer-container {
+    .logo-container {
+            border: 0.5px solid rgba(255, 255, 255, 0.5);
+        }
+}
+
 .footer-container {
     padding-top: 37px;
     padding-bottom: 50px;
+
+    @media screen and (max-width: 800px) {
+        padding: 13px 20px;
+    }
 }
 
 .logo-container {
@@ -105,10 +144,6 @@ body {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, 1fr);
     text-decoration: none;
-    &:hover {
-        border: 1px solid $orangecolor;
-        transform: scale(1.1);
-    }
 }
     .logo {
         margin: 0;
@@ -122,10 +157,6 @@ body {
         line-height: 120%;
         text-align: center;
         color: #FFFFFF;
-
-    &:hover {
-        color: $orangecolor;
-    }
     }
 
     .bamboo {
@@ -139,6 +170,10 @@ body {
     .navigation-container {
         width: 87.5%;
         @include flexbox($main: space-between);
+
+            @media screen and (max-width: 800px) {
+                display: none;
+            }
     }
 
     .navigation-list {
@@ -154,6 +189,10 @@ body {
 
             @media screen and (max-width: 1150px) {
                 gap: 48px;
+            }
+
+            @media screen and (max-width: 800px) {
+                gap: 37px;
             }
 
         li {
@@ -198,10 +237,19 @@ body {
     }
 
 .feedback-button, .donate-button {
-        text-decoration: none;
+        position: relative;
         @include button();
         border-radius: 5px;
         margin-bottom: 180px;
+
+        @media screen and (max-width: 1220px) {
+            margin-bottom: 140px;
+        }
+
+        @media screen and (max-width: 999px) {
+            margin: 0px auto 140px;
+        }
+
     }
 
 .footer-wrapper {
@@ -210,6 +258,10 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, 1fr);
     grid-template-rows: repeat(10, 1fr);
+
+    @media screen and (max-width: 800px) {
+        grid-template-rows: repeat(6, 1fr);
+    }
 
     .logo-footer {
         margin: 0;
@@ -228,6 +280,16 @@ body {
         @media screen and (max-width: 1220px) {
             margin-top: 14px;
         }
+
+        @media screen and (max-width: 999px) {
+            margin: 10px 0px 0px;
+        }
+
+        @media screen and (max-width: 800px) {
+            grid-row: 2 / span 3;
+            margin: 0 0 10px;
+            place-self: center start;
+        }
     }
 }
 
@@ -242,6 +304,16 @@ body {
     @media screen and (max-width: 1220px) {
         margin-top: 5px;
         margin-right: 32px;
+    }
+
+    @media screen and (max-width: 999px) {
+        grid-column: 7 / 14;
+        margin-right: 0;
+        place-self: start end;
+    }
+
+    @media screen and (max-width: 800px) {
+        display: none;
     }
 
 
@@ -309,6 +381,10 @@ body {
     grid-row: 7 / span 4;
     margin: 2px 0;
 
+    @media screen and (max-width:800px) {
+        grid-row: 1 / 5;
+        grid-column: 13 / span 1;
+    }
 
     .network {
         @include robotoFont($height: 140%, $align: start);
@@ -320,6 +396,11 @@ body {
 
         @media screen and (max-width:1220px) {
             gap: 12px;
+        }
+
+        @media screen and (max-width:800px) {
+            place-self: end start;
+            padding-bottom: 20px;
         }
 
     &:hover {
@@ -347,6 +428,12 @@ body {
         @include flexbox();
     }
 
+    .network-name {
+        @media screen and (max-width: 800px) {
+            display: none;
+        }
+    }
+
 }
 
 .navigation-footer {
@@ -370,6 +457,21 @@ body {
         place-self: start;
     }
 
+    @media screen and (max-width: 999px) {
+        margin-right: 0px;
+        margin-left: 25px;
+        grid-column: 2 / 10;
+        place-self: center end;
+    }
+
+    @media screen and (max-width: 800px) {
+        margin-right: 0px;
+        margin-left: 0px;
+        grid-row: 6 / 7;
+        grid-column: 1 / 8;
+        place-self: start;
+    }
+
 }
 
 .created {
@@ -382,8 +484,16 @@ body {
             place-self: center end;
             padding-left: 25px;
     }
-}
 
+    @media screen and (max-width:999px) {
+        grid-column: 10 / span 4;
+    }
+
+    @media screen and (max-width:800px) {
+        grid-column: 10 / span 4;
+        grid-row: 5 / span 2;
+    }
+}
 
 .main-section {
     background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
@@ -404,6 +514,13 @@ body {
         padding-right: 172px;
         margin-bottom: 32px;
     }
+
+    @media screen and (max-width: 800px) {
+        font-size: 24px;
+        line-height: 120%;
+        padding: 30px 0 20px;
+        margin-bottom: 0;
+    }
 }
 
 .main-section-text {
@@ -420,6 +537,12 @@ body {
         line-height: 140%;
         font-weight: 500;
     }
+
+    @media screen and (max-width: 800px) {
+        font-size: 16px;
+        line-height: 22.4px;
+        margin: 0;
+    }
 }
 
 .main-section-subtitle {
@@ -435,6 +558,11 @@ body {
     @media screen and (max-width: 1220px) {
         padding-bottom: 40px;
     }
+
+    @media screen and (max-width: 800px) {
+        margin: 30px 0;
+        padding: 0;
+    }
 }
 
 .inner-block {
@@ -448,6 +576,11 @@ body {
     @media screen and (max-width: 1220px) {
         padding: 20px 44px 45.98px 47px;
         margin-bottom: 30px;
+    }
+
+    @media screen and (max-width: 800px) {
+        padding: 27px 0 28px;
+        margin-bottom: 46px;
     }
 }
 
@@ -478,15 +611,25 @@ body {
     @media screen and (max-width: 1220px) {
         margin-top: 10px;
     }
+
+    @media screen and (max-width: 800px) {
+        margin-top: 20px;
+        text-align: center;
+    }
 }
 
 .images-container {
-    @include flexbox();
+    @include flexbox($wrap: nowrap);
     gap: 55px;
     margin-top: 60px;
 
     @media screen and (max-width: 1220px) {
         margin-top: 62px;
+        margin-right: 5px;
+    }
+
+    @media screen and (max-width: 800px) {
+        margin-top: 50px;
         margin-right: 5px;
     }
 }
@@ -497,6 +640,10 @@ body {
     height: 246px;
     margin-right: 40px;
     margin-bottom: 80px;
+
+    @media screen and (max-width: 800px) {
+        margin-bottom: 65px;
+    }
 }
 
 .panda-meals {
@@ -507,7 +654,10 @@ body {
 
     @media screen and (max-width: 1220px) {
         gap: 10px;
+    }
 
+    @media screen and (max-width: 800px) {
+        margin-top: 15px;
     }
 }
 
@@ -563,6 +713,11 @@ body {
         padding: 0 0px;
         width: 95.5%;
     }
+
+    @media screen and (max-width: 800px) {
+        width: 100%;
+        padding: 0 17px;
+    }
 }
 
 .selection-bar {
@@ -578,6 +733,12 @@ body {
     @media screen and (max-width: 1220px) {
         width: 96.2%;
         left: 2%;
+    }
+
+    @media screen and (max-width: 800px) {
+        width: 89%;
+        left: 5.5%;
+        top: 45%;
     }
 }
 
@@ -636,13 +797,39 @@ body {
     }
 }
 
+.tablet-absent {
+    @media screen and (max-width: 800px) {
+        display: none;
+    }
+}
+
 .price-bar {
     margin-top: 6px;
     width: 100%;
-    @include flexbox($main: space-between, $cross: flex-end);
+    @include flexbox($main: space-between, $cross: flex-end, $wrap: nowrap);
 
     @media screen and (max-width: 1220px) {
         margin: 4px 17px;
+    }
+
+    @media screen and (max-width: 800px) {
+        width: 97%;
+
+        .price-item:nth-child(7) {
+            color: #FE9013;
+        }
+    }
+}
+
+.step:nth-child(7) {
+    @media screen and (max-width: 800px) {
+        border-radius: 50%;
+        border: 1px solid #FE9013;
+
+        .step-radius {
+            border-radius: 50%;
+            border: 1px solid #FE9013;
+        }
     }
 }
 
@@ -662,6 +849,10 @@ body {
     @media screen and (max-width: 1220px) {
         width: 72px;
         margin-bottom: 45px;
+    }
+
+    @media screen and (max-width: 800px) {
+        width: 68px;
     }
 }
 
@@ -692,8 +883,11 @@ body {
     background-position: 248px;
     margin-bottom: 24px;
 
-    @media screen and (max-width: 1220px) {
-
+    @media screen and (max-width: 800px) {
+        width: 180px;
+        height: 42px;
+        background-position: 160px;
+        padding-left: 6px;
     }
 
     &:focus {
@@ -733,6 +927,10 @@ input[type=number] {
         width: 218px;
         gap: 38px;
         justify-content: flex-start;
+    }
+
+    @media screen and (max-width: 800px) {
+        margin-top: 31px;
     }
 
     .payment-item {
@@ -778,6 +976,7 @@ input[type=number] {
 [type="radio"]:checked + label:before,
 [type="radio"]:not(:checked) + label:before {
     content: '';
+    box-sizing: border-box;
     position: absolute;
     left: 0;
     top: 0;
@@ -790,6 +989,7 @@ input[type=number] {
 [type="radio"]:checked + label:after,
 [type="radio"]:not(:checked) + label:after {
     content: '';
+    box-sizing: border-box;
     width: 16px;
     height: 16px;
     background: #4B9200;
@@ -826,4 +1026,16 @@ input[type=number] {
     font-size: 16px;
     line-height: 140%;
     color: #333B41;
+}
+
+.mobile-header {
+    @media screen and (min-width: 801px) {
+        display: none;
+    }
+
+    @media screen and (max-width: 800px) {
+        display: block;
+        position: fixed;
+        z-index: 10;
+    }
 }
