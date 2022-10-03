@@ -61,8 +61,12 @@ body {
     max-width: 1220px;
     margin: 0 auto;
 
-    @media screen and (max-width: 999px) {
+    @media screen and (max-width: 990px) {
         padding: 0 20px;
+    }
+
+    @media screen and (max-width: 460px) {
+        padding: 0 10px;
     }
 }
 
@@ -82,6 +86,11 @@ body {
         height: 335px;
         background-position: 37%;
     }
+
+    @media screen and (max-width: 460px) {
+        height: 187px;
+        background-position: 34%;
+    }
 }
 
 .header, .footer {
@@ -95,6 +104,10 @@ body {
     width: 100%;
     position: relative;
     @include flexbox($main: flex-start, $wrap: nowrap);
+
+        @media screen and (max-width: 800px) {
+            justify-content: space-between;
+        }
 }
 
 .header-container {
@@ -121,6 +134,8 @@ body {
     .logo-container {
             border: 0.5px solid rgba(255, 255, 255, 0.5);
         }
+
+
 }
 
 .footer-container {
@@ -129,6 +144,10 @@ body {
 
     @media screen and (max-width: 800px) {
         padding: 13px 20px;
+    }
+
+    @media screen and (max-width: 460px) {
+        padding: 20px 10px;
     }
 }
 
@@ -195,23 +214,25 @@ body {
                 gap: 37px;
             }
 
+            @media screen and (max-width: 460px) {
+                gap: 30px;
+            }
+
         li {
             a {
                 text-decoration: none;
                 color: white;
 
+
                 &:hover {
                     color: $orangecolor;
                 }
             }
-        }
 
-
-        .active {
-            a {
-            color: $orangecolor;
+                .active {
+                    color: $orangecolor;
+                }
             }
-        }
     }
 
     .figma-link {
@@ -246,7 +267,7 @@ body {
             margin-bottom: 140px;
         }
 
-        @media screen and (max-width: 999px) {
+        @media screen and (max-width: 990px) {
             margin: 0px auto 140px;
         }
 
@@ -263,10 +284,19 @@ body {
         grid-template-rows: repeat(6, 1fr);
     }
 
+    @media screen and (max-width: 460px) {
+        max-width: 300px;
+    }
+
     .logo-footer {
         margin: 0;
         grid-row: 1 / span 2;
         grid-column: 1;
+
+        @media screen and (max-width: 460px) {
+            grid-row: 1;
+            place-self: start center;
+        }
 }
 
     .donate-button {
@@ -281,7 +311,7 @@ body {
             margin-top: 14px;
         }
 
-        @media screen and (max-width: 999px) {
+        @media screen and (max-width: 990px) {
             margin: 10px 0px 0px;
         }
 
@@ -290,7 +320,41 @@ body {
             margin: 0 0 10px;
             place-self: center start;
         }
+
+        @media screen and (max-width: 460px) {
+            grid-row: 3 / span 2;
+            grid-column: 1;
+            place-self: start center;
+            margin-top: 10px;
+        }
     }
+}
+
+.footer-container {
+    .logo-container {
+            border: 0.5px solid rgba(255, 255, 255, 0.5);
+
+            @media screen and (max-width: 460px) {
+                width: 128px;
+                height: 23px;
+                padding: 0;
+                border: none;
+                grid-template-columns: repeat(10, 1fr);
+                grid-template-rows: repeat(1, 1fr);
+
+                .logo {
+                    grid-row: 1;
+                    grid-column: 1 / 11;
+                }
+
+                .bamboo {
+                    grid-row: 1;
+                    grid-column: 7;
+                    margin: 0;
+                    margin-right: 7px;
+                }
+            }
+        }
 }
 
 .subscription-section {
@@ -306,7 +370,7 @@ body {
         margin-right: 32px;
     }
 
-    @media screen and (max-width: 999px) {
+    @media screen and (max-width: 990px) {
         grid-column: 7 / 14;
         margin-right: 0;
         place-self: start end;
@@ -363,9 +427,9 @@ body {
             height: 42px;
             margin-left: 10px;
             background: #F1F3F2;
-            border: 1px solid #4B9200;
+            border: 1px solid #333B41;
             border-radius: 5px;
-            @include robotoFont($height: 140%, $color: #4b9200);
+            @include robotoFont($height: 140%, $color: #333B41);
 
             &:hover, &:active {
                 cursor: pointer;
@@ -384,6 +448,14 @@ body {
     @media screen and (max-width:800px) {
         grid-row: 1 / 5;
         grid-column: 13 / span 1;
+    }
+
+    @media screen and (max-width:460px) {
+        place-self: start center;
+        flex-direction: row;
+        grid-row: 2;
+        grid-column: 1;
+        gap: 30px;
     }
 
     .network {
@@ -457,7 +529,7 @@ body {
         place-self: start;
     }
 
-    @media screen and (max-width: 999px) {
+    @media screen and (max-width: 990px) {
         margin-right: 0px;
         margin-left: 25px;
         grid-column: 2 / 10;
@@ -470,6 +542,14 @@ body {
         grid-row: 6 / 7;
         grid-column: 1 / 8;
         place-self: start;
+    }
+
+    @media screen and (max-width: 460px) {
+        margin-right: 0px;
+        margin-left: 0px;
+        grid-row: 6;
+        grid-column: 1;
+        place-self: end center;
     }
 
 }
@@ -485,13 +565,27 @@ body {
             padding-left: 25px;
     }
 
-    @media screen and (max-width:999px) {
+    @media screen and (max-width:990px) {
         grid-column: 10 / span 4;
     }
 
     @media screen and (max-width:800px) {
         grid-column: 10 / span 4;
         grid-row: 5 / span 2;
+    }
+
+    @media screen and (max-width:630px) {
+        grid-column: 1 / span 4;
+        grid-row: 4 / span 2;
+        place-self: center start;
+        padding-left: 0;
+    }
+
+    @media screen and (max-width:460px) {
+        margin-top: 0px;
+        grid-column: 1;
+        grid-row: 4 / span 2;
+        place-self: end;
     }
 }
 
@@ -516,6 +610,13 @@ body {
     }
 
     @media screen and (max-width: 800px) {
+        font-size: 24px;
+        line-height: 120%;
+        padding: 30px 0 20px;
+        margin-bottom: 0;
+    }
+
+    @media screen and (max-width: 460px) {
         font-size: 24px;
         line-height: 120%;
         padding: 30px 0 20px;
@@ -563,6 +664,15 @@ body {
         margin: 30px 0;
         padding: 0;
     }
+
+    @media screen and (max-width: 630px) {
+        font-size: 35px;
+    }
+
+    @media screen and (max-width: 460px) {
+        font-size: 24px;
+        margin: 25px 0;
+    }
 }
 
 .inner-block {
@@ -582,6 +692,11 @@ body {
         padding: 27px 0 28px;
         margin-bottom: 46px;
     }
+
+    @media screen and (max-width: 460px) {
+        padding: 27px 0 15px;
+        margin-bottom: 22px;
+    }
 }
 
 .inner-block-header {
@@ -597,6 +712,14 @@ body {
 
     @media screen and (max-width: 1220px) {
         margin-bottom: 10px;
+    }
+
+    @media screen and (max-width: 630px) {
+        font-size: 40px;
+    }
+
+    @media screen and (max-width: 460px) {
+        font-size: 24px;
     }
 }
 
@@ -616,6 +739,15 @@ body {
         margin-top: 20px;
         text-align: center;
     }
+
+    @media screen and (max-width: 630px) {
+        font-size: 20px;
+    }
+
+    @media screen and (max-width: 460px) {
+        font-size: 16px;
+        margin-top: 10px;
+    }
 }
 
 .images-container {
@@ -632,6 +764,20 @@ body {
         margin-top: 50px;
         margin-right: 5px;
     }
+
+    @media screen and (max-width: 630px) {
+        gap: 0px;
+    }
+
+    @media screen and (max-width: 460px) {
+        margin-right: 0;
+        margin-top: 0;
+        justify-content: space-evenly;
+    }
+
+    @media screen and (max-width: 330px) {
+        justify-content: space-between;
+    }
 }
 
 .panda-image {
@@ -643,6 +789,20 @@ body {
 
     @media screen and (max-width: 800px) {
         margin-bottom: 65px;
+    }
+
+    @media screen and (max-width: 630px) {
+        width: 160.15px;
+        height: 138.72px;
+        background-size: cover;
+        margin-right: 10px;
+    }
+
+    @media screen and (max-width: 460px) {
+        background-image: url("./../../assets/panda_widget1.svg");
+        background-position: right;
+        margin-bottom: 0;
+        margin-right: 0;
     }
 }
 
@@ -658,6 +818,18 @@ body {
 
     @media screen and (max-width: 800px) {
         margin-top: 15px;
+    }
+
+    @media screen and (max-width: 630px) {
+        max-width: 170px;
+    }
+
+    @media screen and (max-width: 460px) {
+        justify-content: space-between;
+        max-width: 100px;
+        height: auto;
+        margin-top: 45px;
+        margin-left: 0px;;
     }
 }
 
@@ -675,6 +847,14 @@ body {
     color: #333B41;
     margin-bottom: 27px;
     margin-right: 5px;
+
+    @media screen and (max-width: 630px) {
+        font-size: 12.02px;
+    }
+
+    @media screen and (max-width: 460px) {
+        font-size: 9.02px;
+    }
 }
 
 .number {
@@ -688,6 +868,16 @@ body {
     text-transform: uppercase;
     color: #000000;
     margin-top: 5px;
+
+    @media screen and (max-width: 630px) {
+        margin-left: 45px;
+        font-size: 55.6px;
+    }
+
+    @media screen and (max-width: 460px) {
+        font-size: 40.6px;
+        margin-left: 30px;
+    }
 }
 
 .multiplication {
@@ -696,6 +886,16 @@ body {
     font-size: 32px;
     font-weight: 800px;
     margin-bottom: 5px;
+
+    @media screen and (max-width: 630px) {
+        margin-left: 45px;
+    }
+
+    @media screen and (max-width: 460px) {
+        font-size: 25px;
+        margin-left: 30px;
+        margin-bottom: 0;
+    }
 }
 
 .donation-bar {
@@ -718,6 +918,35 @@ body {
         width: 100%;
         padding: 0 17px;
     }
+
+    @media screen and (max-width: 630px) {
+        width: 100%;
+        padding: 0 19px;
+    }
+
+    @media screen and (max-width: 460px) {
+        margin: 30px 0 10px;
+        height: 12px;
+        padding: 0 10px;
+    }
+}
+
+.donation-bar::before {
+    content: "Amount";
+    position: absolute;
+    top: -40px;
+    @include robotoFont($height: 140%);
+    color: black;
+
+    @media screen and (max-width: 800px) {
+        top: -26px;
+        left: 10px;
+    }
+
+    @media screen and (max-width: 460px) {
+        left: 0;
+    }
+
 }
 
 .selection-bar {
@@ -740,6 +969,18 @@ body {
         left: 5.5%;
         top: 45%;
     }
+
+    @media screen and (max-width: 630px) {
+        width: 84.5%;
+        left: 7.7%;
+        top: 45%;
+    }
+
+    @media screen and (max-width: 460px) {
+        width: calc(100% - 38px);
+        left: 19px;
+        top: 5px;
+    }
 }
 
 
@@ -761,6 +1002,12 @@ body {
     }
     }
 
+    @media screen and (max-width: 460px) {
+        width: 20px;
+        height: 20px;
+        top: -30%;
+    }
+
 }
 
 .step-mark {
@@ -769,6 +1016,10 @@ body {
     height: 10px;
     border-radius: 50%;
 
+    @media screen and (max-width: 460px) {
+        width: 5px;
+        height: 5px;
+    }
 }
 
 .step-active {
@@ -782,6 +1033,11 @@ body {
     height: 22.95px;
     background-color: transparent;
     @include flexbox();
+
+    @media screen and (max-width: 460px) {
+        width: 10px;
+        height: 10px;
+    }
 }
 
 .small-desktop-absent {
@@ -819,6 +1075,11 @@ body {
             color: #FE9013;
         }
     }
+
+    @media screen and (max-width: 460px) {
+        width: 95%;
+        margin: 10px;
+    }
 }
 
 .step:nth-child(7) {
@@ -854,6 +1115,14 @@ body {
     @media screen and (max-width: 800px) {
         width: 68px;
     }
+
+    @media screen and (max-width: 460px) {
+        font-size: 13px;
+        height: 18px;
+        width: 30px;
+        padding-top: 0;
+        margin-bottom: 0;
+    }
 }
 
 .price-selected {
@@ -888,6 +1157,10 @@ body {
         height: 42px;
         background-position: 160px;
         padding-left: 6px;
+    }
+
+    @media screen and (max-width: 460px) {
+        margin: 23px auto 15px;
     }
 
     &:focus {
@@ -931,6 +1204,10 @@ input[type=number] {
 
     @media screen and (max-width: 800px) {
         margin-top: 31px;
+    }
+
+    @media screen and (max-width: 460px) {
+        margin-top: 25px;
     }
 
     .payment-item {
@@ -1026,6 +1303,10 @@ input[type=number] {
     font-size: 16px;
     line-height: 140%;
     color: #333B41;
+
+    @media screen and (max-width: 800px) {
+        font-size: 15.9px;
+    }
 }
 
 .mobile-header {
@@ -1037,5 +1318,21 @@ input[type=number] {
         display: block;
         position: fixed;
         z-index: 10;
+    }
+}
+
+.burger-icon {
+    @media screen and (max-width: 800px) {
+            display: inline-block;
+            cursor: pointer;
+
+        .burger-element, .burger-element, .burger-element {
+          width: 18px;
+          height: 2px;
+          border: none;
+          background-color: white;
+          margin: 2px 0;
+          transition: 0.4s;
+        }
     }
 }

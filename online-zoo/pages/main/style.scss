@@ -58,8 +58,12 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     max-width: 1220px;
     margin: 0 auto;
 
-    @media screen and (max-width: 999px) {
+    @media screen and (max-width: 990px) {
         padding: 0 20px;
+    }
+
+    @media screen and (max-width: 630px) {
+        padding: 0 10px;
     }
 }
 
@@ -68,6 +72,7 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     background-size: cover;
     width: 100%;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    z-index: 15;
 
     @media screen and (max-width: 1150px) {
         background-image: url("./../../assets/background.png");
@@ -75,6 +80,12 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         background-position: center;
     }
 
+    @media screen and (max-width: 450px) {
+        height: 220px;
+        background-repeat: no-repeat;
+        background-size: 117%;
+        background-position: top;
+    }
 }
 
 
@@ -90,6 +101,12 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     width: 100%;
     position: relative;
     @include flexbox($main: flex-start, $wrap: nowrap);
+    z-index: 2;
+
+
+        @media screen and (max-width: 800px) {
+            justify-content: space-between;
+    }
 }
 
 .header-container {
@@ -113,17 +130,15 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
 }
 
 .footer-container {
-    .logo-container {
-            border: 0.5px solid rgba(255, 255, 255, 0.5);
-        }
-}
-
-.footer-container {
     padding-top: 37px;
     padding-bottom: 50px;
 
     @media screen and (max-width: 800px) {
-        padding: 13px 20px;
+        padding: 10px 20px;
+    }
+
+    @media screen and (max-width: 450px) {
+        padding: 20px 10px;
     }
 }
 
@@ -184,6 +199,10 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
                 gap: 37px;
             }
 
+            @media screen and (max-width: 450px) {
+                gap: 30px;
+            }
+
         li {
             a {
                 text-decoration: none;
@@ -225,32 +244,40 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     @include flexbox($direction: column, $main: flex-end, $cross: flex-end);
     width: 100%;
     padding-top: 86px;
+    z-index: 1;
 
     @media screen and (max-width: 1150px) {
         padding-top: 42.8px;
         padding-right: 85.75px;
     }
 
-    @media screen and (max-width: 999px) {
+    @media screen and (max-width: 990px) {
         padding-top: 48.04px;
         padding-right: 14.77px;
+    }
+
+    @media screen and (max-width: 450px) {
+        padding: 41px;
+        padding-right: 0px;
+        padding-left: 0px;
     }
 }
 
 .label-area-container {
     padding-right: 8px;
     @include flexbox($direction: column, $main: center, $cross: center);
+    z-index: 10;
 
-    @media screen and (max-width: 999px) {
-        padding-right: 0px;
-        width: 100%;
-        @include flexbox($direction: row-reverse, $main: space-around, $cross: flex-end);
-    }
-
-    @media screen and (max-width: 999px) {
+    @media screen and (max-width: 800px) {
         padding-right: 0px;
         width: 100%;
         @include flexbox($direction: row-reverse, $main: space-between, $cross: flex-end);
+    }
+
+    @media screen and (max-width: 630px) {
+        padding-right: 0px;
+        width: 100%;
+        @include flexbox($direction: column, $main: space-between, $cross: flex-end);
     }
 }
 
@@ -259,8 +286,9 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     margin-bottom: 60px;
     @include robotoFont($weight: 700, $height: 75%, $size: 106.496px);
     text-transform: uppercase;
+    z-index: 10;
 
-    @media screen and (max-width: 1440px) {
+    @media screen and (max-width: 1500px) {
         font-size: 85.72px;
     }
 
@@ -268,7 +296,7 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         margin-bottom: 40.2px;
     }
 
-    @media screen and (max-width: 999px) {
+    @media screen and (max-width: 990px) {
         font-size: 70.42px;
         margin-bottom: 86.57px;
     }
@@ -277,6 +305,20 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         font-size: 54.42px;
         margin-bottom: 86.57px;
         margin-right: 5px;
+    }
+
+    @media screen and (max-width: 630px) {
+        font-size: 34.42px;
+        margin-bottom: 30px;
+        margin-right: 25px;
+    }
+
+    @media screen and (max-width: 450px) {
+        font-size: 27.21px;
+        // margin: 41px;
+        margin-bottom: 63.39px;
+        margin-right: 13px;
+        line-height: 77%;
     }
 
 
@@ -297,14 +339,14 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     right: 100px;
     z-index: -1;
 
-    @media screen and (max-width: 1440px) {
+    @media screen and (max-width: 1500px) {
         bottom: 6.8px;
         right: 83.25px;
         width: 367px;
         height: 367px;
     }
 
-    @media screen and (max-width: 999px) {
+    @media screen and (max-width: 990px) {
         bottom: 4.6px;
         right: 55.34px;
         width: 300px;
@@ -316,23 +358,56 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         height: 237.6px;
     }
 
+    @media screen and (max-width: 630px) {
+        width: 179.09px;
+        height: 179.09px;
+        bottom: -5px;
+        right: 10px;
+    }
+
+    @media screen and (max-width: 450px) {
+        width: 119.09px;
+        height: 119.09px;
+        bottom: 2.31px;
+        right: 25px;
+    }
+
 }
 
 .watch-button {
     @include button();
     margin-bottom: 100px;
+    z-index: 20;
 
-    @media screen and (max-width: 1440px) {
+    @media screen and (max-width: 1500px) {
         margin-bottom: 47px;
     }
 
     @media screen and (max-width: 800px) {
         margin-bottom: 40px;
     }
+
+    @media screen and (max-width: 450px) {
+        margin: 0 auto 40px;
+    }
 }
 
 .section2-wrapper {
     position: relative;
+    overflow: hidden;
+    z-index: 0;
+
+@media screen and (max-width: 990px) {
+        padding-bottom: 80px;
+    }
+
+@media screen and (max-width: 800px) {
+        padding-bottom: 0px;
+    }
+
+    @media screen and (max-width: 450px) {
+        margin-top: 104px;
+    }
 }
 
 .flower-element {
@@ -342,15 +417,14 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     background-repeat: no-repeat;
     position: absolute;
     right: 0;
-    bottom: -17%;
-    z-index: -1;
+    top: 2%;
     border: none;
 
-    @media screen and (max-width: 1440px) {
+    @media screen and (max-width: 1500px) {
         display: none;
     }
 
-    @media screen and (max-width: 999px) {
+    @media screen and (max-width: 990px) {
         display: block;
         bottom: -15%;
         width: 185px;
@@ -361,7 +435,19 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     }
 
     @media screen and (max-width: 800px) {
-        top: -15%;
+        top: -1%;
+    }
+
+    @media screen and (max-width: 630px) {
+        right: -8%;
+        top: -3%;
+    }
+
+    @media screen and (max-width: 450px) {
+        height: 210px;
+        right: -8%;
+        top: 4.5%;
+        background-size: contain;
     }
 }
 
@@ -372,20 +458,29 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     grid-template-columns: 610px 1fr;
     position: relative;
     z-index: 1;
+    padding-bottom: 178px;
 
             @media screen and (max-width: 1220px) {
                 margin-top: 98px;
                 grid-template-columns: 455px 1fr;
+                padding-bottom: 0;
             }
 
-            @media screen and (max-width: 999px) {
+            @media screen and (max-width: 990px) {
                 margin-top: 98px;
                 grid-template-columns: 1fr;
             }
 
-            @media screen and (max-width: 999px) {
+            @media screen and (max-width: 800px) {
                 margin-top: 60px;
-                grid-template-columns: 1fr;
+            }
+
+            @media screen and (max-width: 630px) {
+                margin-top: 20px;
+            }
+
+            @media screen and (max-width: 450px) {
+                margin-top: 0px;
             }
 
     .hat-man {
@@ -403,7 +498,7 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
                 background-size: cover;
             }
 
-            @media screen and (max-width: 999px) {
+            @media screen and (max-width: 990px) {
                 display: none;
             }
 
@@ -419,7 +514,7 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
             margin-left: 31px;
         }
 
-        @media screen and (max-width: 999px) {
+        @media screen and (max-width: 990px) {
             margin-right: 125px;
         }
 
@@ -427,9 +522,22 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
             margin: 0px 105px 0px 0px;
         }
 
+        @media screen and (max-width: 630px) {
+            margin-right: 70px;
+        }
+
+        @media screen and (max-width: 450px) {
+            margin-right: 5px;
+        }
+
+
         .hat-man-title {
             @include robotoFont($height: 120%, $size: 48px, $align: start, $color: $blackcolor);
             margin: 0;
+
+            @media screen and (max-width: 450px) {
+                font-size: 24px;
+            }
 
     }
 
@@ -442,6 +550,12 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
                 letter-spacing: 0;
             }
 
+            @media screen and (max-width: 450px) {
+                font-size: 16px;
+                line-height: 130%;
+                margin: 10px 0;
+            }
+
         }
 
         .hat-man-text-title {
@@ -452,6 +566,10 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
 
             @media screen and (max-width: 800px) {
                 margin: 30px 0 20px;
+            }
+
+            @media screen and (max-width: 450px) {
+                margin: 20px 0 10px;
             }
         }
 
@@ -467,22 +585,30 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
                 margin: 20px 0 80px;
             }
 
+            @media screen and (max-width: 450px) {
+                margin: 10px 0 40px;
+            }
+
         }
 
     }
 
 }
 
+.carousel-wrap {
+    position: relative;
+}
+
 .carousel-section {
     @include flexbox($direction: column);
     overflow: hidden;
     height: 872px;
-    margin: 178px auto 80px;
+    margin: 0px auto 80px;
     row-gap: 20px;
     column-gap: 30px;
     position: relative;
 
-    @media  screen and (max-width: 1599px) {
+   @media  screen and (max-width: 1500px) {
         height: 947px;
         row-gap: 95px;
         transition: all 0.5 linear;
@@ -496,25 +622,37 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         margin: 140px auto 80px;
     }
 
-    @media  screen and (max-width: 999px) {
+    @media  screen and (max-width: 990px) {
         width: 653px;
         height: 801px;
         column-gap: 65px;
         row-gap: 92px;
         transition: all 0.5 linear;
-        margin: 140px auto 80px;
+        margin: 0 auto 80px;
     }
 
     @media  screen and (max-width: 800px) {
         margin: 0px auto 60px;
-        width: 600px;
+        max-width: 600px;
         height: 756px;
         column-gap: 29.76px;
+    }
+
+    @media  screen and (max-width: 630px) {
+        width: 100%;
+        height: 1388px;
+        row-gap: 20px;
+        flex-wrap: nowrap;
+    }
+
+    @media  screen and (max-width: 450px) {
+        margin-bottom: 20px;
     }
 }
 
 .carousel-wrapper {
     position: relative;
+    width: 100%;
 }
 
 .flower-right {
@@ -522,11 +660,17 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     height:275px;
     position: absolute;
     bottom: -100px;
-    z-index: 0;
+    z-index: -1;
     right: 0;
     background-image: url("./../../assets/strelitzia.png");
     background-repeat: no-repeat;
     background-size: cover;
+
+    @media screen and (max-width: 1500px) {
+        width: 241px;
+        height: 180px;
+        background-size: cover;
+    }
 
     @media screen and (max-width: 1220px) {
         bottom: -140px;
@@ -539,7 +683,17 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         bottom: -100px;
         width: 175px;
         height: 131px;
-        background-size: cover;
+    }
+
+    @media screen and (max-width: 630px) {
+        width: 120px;
+        height: 110px;
+    }
+
+    @media screen and (max-width: 450px) {
+        bottom: -65px;
+        width: 68px;
+        height: 71px;
     }
 }
 
@@ -548,18 +702,21 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     height:460px;
     position: absolute;
     bottom: -100px;
-    z-index: 0;
+    z-index: -1;
     left: 0;
     background-image: url("./../../assets/palm_foto.png");
     background-repeat: no-repeat;
     background-size: cover;
 
-    @media screen and (max-width: 1220px) {
-        bottom: -140px;
+    @media screen and (max-width: 1500px) {
         width: 195px;
         height: 202px;
         background-image: url("./../../assets/palm_foto1220.png");
         background-size: cover;
+    }
+
+    @media screen and (max-width: 1220px) {
+        bottom: -140px;
     }
 
     @media screen and (max-width: 800px) {
@@ -570,6 +727,17 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         background-size: cover;
     }
 
+    @media screen and (max-width: 630px) {
+        width: 165px;
+        height: 182px;
+    }
+
+    @media screen and (max-width: 450px) {
+        bottom: -60px;
+        left: -10px;
+        width: 60px;
+        height: 72px;
+    }
 }
 
 .carousel-item {
@@ -586,7 +754,7 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         height: 354px;
     }
 
-    @media  screen and (max-width: 999px) {
+    @media  screen and (max-width: 990px) {
         width:285px;
         height: 332px;
     }
@@ -628,7 +796,7 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         height:294px;
     }
 
-    @media  screen and (max-width: 999px) {
+    @media  screen and (max-width: 990px) {
         height:285px;
     }
 }
@@ -645,7 +813,7 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     height: 58px;
     }
 
-    @media  screen and (max-width: 999px) {
+    @media  screen and (max-width: 990px) {
     height: 45px;
     }
 }
@@ -656,6 +824,7 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
 
     @media  screen and (max-width: 800px) {
         padding-left: 12.47px;
+        padding-bottom: 4px;
     }
 }
 
@@ -728,6 +897,15 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         @media  screen and (max-width: 800px) {
             background-size: contain;
         }
+
+        @media  screen and (max-width: 630px) {
+            width: 37.41px;
+            height: 29.62px;
+        }
+    }
+
+    @media  screen and (max-width: 450px) {
+        order: 2;
     }
 
 }
@@ -781,6 +959,10 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         order: 7;
     }
 
+    @media  screen and (max-width: 630px) {
+        display: none;
+    }
+
 }
 
 .cheetah {
@@ -800,10 +982,19 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         @media  screen and (max-width: 800px) {
             background-size: contain;
         }
+
+        @media  screen and (max-width: 630px) {
+            width: 37.41px;
+            height: 29.62px;
+        }
     }
 
     @media  screen and (max-width: 1220px) {
         order: 5;
+    }
+
+    @media  screen and (max-width: 630px) {
+        display: none;
     }
 
 }
@@ -825,6 +1016,15 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         @media  screen and (max-width: 800px) {
             background-size: contain;
         }
+
+        @media  screen and (max-width: 630px) {
+            width: 37.41px;
+            height: 29.62px;
+        }
+    }
+
+    @media  screen and (max-width: 630px) {
+        display: none;
     }
 
 }
@@ -845,6 +1045,11 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
 
         @media  screen and (max-width: 800px) {
             background-size: contain;
+        }
+
+        @media  screen and (max-width: 630px) {
+            width: 37.41px;
+            height: 29.62px;
         }
     }
 
@@ -873,6 +1078,10 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         }
     }
 
+    @media  screen and (max-width: 630px) {
+        display: none;
+    }
+
 }
 
 
@@ -882,9 +1091,12 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     height: 62px;
     background: $orangecolor;
     border-radius: 50%;
-    left: 0;
     transition: all 0.5 linear;
     @include flexbox();
+
+    @media  screen and (max-width: 630px) {
+        display: none;
+    }
 
         &:hover {
         cursor: pointer;
@@ -898,49 +1110,45 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
 
 .arrow-left {
     position: absolute;
-    top: 40%;
-    left: 8.5%;
+    top: 46%;
+    left: -50px;
 
-        @media  screen and (max-width: 1599px) {
-            top: 41%;
+        @media  screen and (max-width: 1500px) {
+            top: 46%;
             left: 25%;
             transition: all 0.5 linear;
         }
 
         @media  screen and (max-width: 1220px) {
-            top: 39.5%;
             left: 35.4%;
-            transition: all 0.5 linear;
         }
 
         @media  screen and (max-width: 800px) {
-            top: 39.5%;
+            top: 45%;
             left: 38%;
-            transition: all 0.5 linear;
         }
 
 }
 
 .arrow-right {
     position: absolute;
-    top: 40%;
-    left: 87.5%;
+    top: 46%;
+    right: -50px;
 
-        @media  screen and (max-width: 1599px) {
-            top: 41%;
-            left: 70%;
+        @media  screen and (max-width: 1500px) {
+            top: 46%;
+            right: 25%;
             transition: all 0.5 linear;
         }
 
         @media  screen and (max-width: 1220px) {
-            top: 39.5%;
-            left: 58.5%;
+            right: 35.4%;
             transition: all 0.5 linear;
         }
 
         @media  screen and (max-width: 800px) {
-            top: 39.5%;
-            left: 52%;
+            top: 45%;
+            right: 38%;
             transition: all 0.5 linear;
         }
 
@@ -956,6 +1164,10 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
 
     @media  screen and (max-width: 800px) {
         margin-bottom: 100px;
+    }
+
+    @media  screen and (max-width: 450px) {
+        margin-bottom: 60px;
     }
 }
 
@@ -974,6 +1186,11 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     @media  screen and (max-width: 800px) {
         padding: 0;
     }
+
+    @media  screen and (max-width: 450px) {
+        padding: 0 10px;
+    }
+
 }
 
 .section4 {
@@ -986,13 +1203,19 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         margin: 30px 0px 50px;
     }
 
-    @media screen and (max-width: 999px) {
+    @media screen and (max-width: 990px) {
         padding: 10px 20px 60px;
     }
     @media screen and (max-width: 800px) {
+        width: 100%;
         padding: 10px 0 0;
         margin: 20px 0px 20px;
     }
+
+    @media screen and (max-width: 450px) {
+        padding: 20px 0 0;
+    }
+
 
 }
 
@@ -1004,12 +1227,17 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         margin: 30px auto 20px;
     }
 
-    @media screen and (max-width: 999px) {
+    @media screen and (max-width: 990px) {
         margin: 0 auto 20px;
     }
 
     @media screen and (max-width: 800px) {
         font-size: 42px;
+    }
+
+    @media screen and (max-width: 450px) {
+        font-size: 24px;
+        margin: 0 auto 10px;
     }
 }
 
@@ -1022,7 +1250,7 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         margin: 20px auto;
     }
 
-    @media screen and (max-width: 999px) {
+    @media screen and (max-width: 990px) {
         padding: 0;
         margin: 20px auto;
     }
@@ -1030,6 +1258,15 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     @media screen and (max-width: 800px) {
         margin: 20px;
         font-size: 22px;
+    }
+
+    @media screen and (max-width: 630px) {
+        text-align: center;
+    }
+
+    @media screen and (max-width: 450px) {
+        font-size: 18px;
+        margin: 10px 0px 20px;
     }
 }
 
@@ -1043,7 +1280,7 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         padding: 0 100px 0 49px;
     }
 
-    @media screen and (max-width: 999px) {
+    @media screen and (max-width: 990px) {
         padding: 0;
         margin: 20px auto 10px;
     }
@@ -1051,6 +1288,10 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     @media screen and (max-width: 800px) {
         margin: 20px 20px 10px;
         font-size: 16px;
+    }
+
+    @media screen and (max-width: 630px) {
+        display: none;
     }
 }
 
@@ -1063,7 +1304,7 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         padding: 0 68px 0 49px;
     }
 
-    @media screen and (max-width: 999px) {
+    @media screen and (max-width: 990px) {
         padding: 0;
         margin: 10px auto 30px;
     }
@@ -1071,6 +1312,10 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     @media screen and (max-width: 800px) {
         margin: 10px 20px;
         font-size: 16px;
+    }
+
+    @media screen and (max-width: 630px) {
+        display: none;
     }
 }
 
@@ -1096,6 +1341,11 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     @media screen and (max-width: 800px) {
         margin: 30px 20px 20px;
     }
+
+    @media screen and (max-width: 450px) {
+        margin: 20px;
+        font-size: 24px;
+    }
 }
 
 .how-it-works-section {
@@ -1104,24 +1354,36 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     @include flexbox($main: space-evenly);
 
     @media screen and (max-width: 1220px) {
-        @include flexbox($main: center);
-        gap: 130px;
-        margin: 40px 88px;
+        max-width: 764px;
+        @include flexbox($main: space-between);
+        margin: 40px auto;
     }
 
-    @media screen and (max-width: 999px) {
+    @media screen and (max-width: 990px) {
+        max-width: auto;
         @include flexbox($wrap: nowrap, $main: center);
-        margin: 40px 20px;
+        margin: 40px auto;
         gap: 78px;
     }
 
-    @media screen and (max-width: 999px) {
+    @media screen and (max-width: 990px) {
         gap: 42px;
     }
 
     @media screen and (max-width: 800px) {
         margin: 20px 32px 20px 20px;
         gap: 42px;
+    }
+
+    @media screen and (max-width: 630px) {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    @media screen and (max-width: 450px) {
+        justify-content: flex-end;
+        margin: 0 auto;
+        gap: 25px;
     }
 }
 
@@ -1131,6 +1393,14 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     @include flexbox($direction: column, $main: flex-start);
     position: relative;
     z-index: -1;
+
+    @media screen and (max-width: 630px) {
+        height: 231px;
+    }
+
+    @media screen and (max-width: 450px) {
+        height: auto;
+    }
 }
 
 .work-item-image {
@@ -1159,12 +1429,20 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     align-self: flex-start;
     @include robotoFont($height: 140%, $align: start, $color: $blackcolor);
     margin-top: 30px;
+
+    @media screen and (max-width: 630px) {
+        margin-top: 10px;
+    }
+
+    @media screen and (max-width: 450px) {
+        margin: 10px 0;
+    }
 }
 
 .work-item3::before, .work-item2::before {
     position: absolute;
-    left: -75%;
-    margin: 62px 30px;
+    left: -61%;
+    margin: 59px 0;
     content: url("./../../assets/arrow.png");
 
     @media screen and (max-width: 1220px) {
@@ -1172,7 +1450,7 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         left: -60%;
     }
 
-    @media screen and (max-width: 999px) {
+    @media screen and (max-width: 990px) {
         content: url("./../../assets/arrow_mobile.png");
         top: -35%;
         left: -50%;
@@ -1183,6 +1461,20 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     @media screen and (max-width: 800px) {
         left: -45%;
         top: -33%;
+    }
+
+    @media screen and (max-width: 630px) {
+        transform: rotate(90deg);
+        right: -55%;
+        bottom: -5%;
+    }
+
+    @media screen and (max-width: 450px) {
+        width: 70px;
+        height: 70px;
+        transform: rotate(90deg);
+        left: 76%;
+        top: -60%;
     }
 }
 
@@ -1201,12 +1493,16 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     margin: 70px auto 50px;
     }
 
-    @media screen and (max-width: 999px) {
+    @media screen and (max-width: 990px) {
     margin: 70px auto 0px;
     }
 
-    @media screen and (max-width: 999px) {
+    @media screen and (max-width: 800px) {
     margin: 40px auto 60px;
+    }
+
+    @media screen and (max-width: 450px) {
+    margin: 25px auto 40px;
     }
 }
 
@@ -1234,11 +1530,30 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         bottom: -10%;
         right: -7px;
     }
+
+    @media screen and (max-width: 450px) {
+        width: 40px;
+        height: 100px;
+        background-size: cover;
+        bottom: -5.5%;
+        right: -7px;
+        transform: rotate(-15deg);
+    }
 }
 
 .section5-wrapper {
+    width: 100%;
     position: relative;
     overflow: hidden;
+
+}
+
+.section5-container {
+    width: 100%;
+
+    @media screen and (max-width: 1220px) {
+        max-width: 1000px;
+    }
 }
 
 .section5-title {
@@ -1249,8 +1564,13 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         margin: 100px auto 30px;
     }
 
-    @media screen and (max-width: 999px) {
+    @media screen and (max-width: 990px) {
         margin: 60px auto 30px;
+    }
+
+    @media screen and (max-width: 450px) {
+        margin: 30px auto 20px;
+        font-size: 24px;
     }
 }
 
@@ -1267,7 +1587,7 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         margin-bottom: 20px;
     }
 
-    @media screen and (max-width: 999px) {
+    @media screen and (max-width: 990px) {
         @include flexbox($direction: column, $main: center, $cross:space-between, $wrap: nowrap);
         width: 653px;
         row-gap: 15px;
@@ -1294,13 +1614,17 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         width: 293px;
     }
 
-    @media screen and (max-width: 999px) {
+    @media screen and (max-width: 990px) {
         padding: 0;
         width: 600px;
         height: 109px;
         @include flexbox();
         background: linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%),
         linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
+    }
+
+    @media screen and (max-width: 800px) {
+        max-width: 100%;
     }
 }
 
@@ -1319,11 +1643,15 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         padding: 13px 15px 19px 15px;
     }
 
-    @media screen and (max-width: 999px) {
+    @media screen and (max-width: 990px) {
         margin: 1px 0px;
         width: 596px;
         height: 105px;
         padding: 0;
+    }
+
+    @media screen and (max-width: 800px) {
+        width: 99.5%;
     }
 }
 
@@ -1332,13 +1660,17 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     height: 37px;
     @include flexbox($main: flex-start, $cross: flex-start);
 
-    @media screen and (max-width: 999px) {
+    @media screen and (max-width: 990px) {
         margin: 15px 29px 11px 12px;
         width: 95%;
     }
 
     @media screen and (max-width: 800px) {
         margin: 14px 29px 11px 11px;
+    }
+
+    @media screen and (max-width: 450px) {
+        margin: 10px 29px 10px 12px;
     }
 }
 
@@ -1366,11 +1698,19 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
 .username {
     margin-left: 10px;
     @include robotoFont($align: start, $color: $blackcolor);
+
+    @media screen and (max-width: 450px) {
+        margin-left: 6px;
+    }
 }
 
 .extra-info {
     margin-left: 10px;
     @include robotoFont($weight: 300, $size: 15px, $align: start, $color: #BDBDBD);
+
+    @media screen and (max-width: 450px) {
+        margin-left: 6px;
+    }
 }
 
 .testimonial-text {
@@ -1388,12 +1728,17 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         margin-bottom: 19px;
     }
 
-    @media screen and (max-width: 999px) {
+    @media screen and (max-width: 990px) {
         box-sizing: border-box;
         width: 95%;
         height: 38px;
         margin: 0px 29px 0px 18px;
         margin-bottom: 25px;
+    }
+
+    @media screen and (max-width: 450px) {
+        width: 90%;
+        margin: 0px 29px 0px 18px;
     }
 }
 
@@ -1412,7 +1757,7 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         margin: 0 auto 52px;
     }
 
-    @media screen and (max-width: 999px) {
+    @media screen and (max-width: 990px) {
         display: none;
     }
 
@@ -1448,7 +1793,7 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
             margin-bottom: 140px;
         }
 
-        @media screen and (max-width: 999px) {
+        @media screen and (max-width: 990px) {
             margin: 0px auto 140px;
         }
     }
@@ -1457,6 +1802,11 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     @media screen and (max-width: 800px) {
         width: 240px;
         margin: 40px auto 80px;
+    }
+
+    @media screen and (max-width: 450px) {
+        width: 240px;
+        margin: 30px auto 60px;
     }
 }
 
@@ -1471,10 +1821,19 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         grid-template-rows: repeat(6, 1fr);
     }
 
+    @media screen and (max-width: 450px) {
+        max-width: 300px;
+    }
+
     .logo-footer {
         margin: 0;
         grid-row: 1 / span 2;
         grid-column: 1;
+
+        @media screen and (max-width: 450px) {
+            grid-row: 1;
+            place-self: start center;
+        }
 }
 
     .donate-button {
@@ -1489,7 +1848,7 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
             margin-top: 14px;
         }
 
-        @media screen and (max-width: 999px) {
+        @media screen and (max-width: 990px) {
             margin: 10px 0px 0px;
         }
 
@@ -1498,7 +1857,41 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
             margin: 0 0 10px;
             place-self: center start;
         }
+
+        @media screen and (max-width: 450px) {
+            grid-row: 3 / span 2;
+            grid-column: 1;
+            place-self: start center;
+            margin-top: 10px;
+        }
     }
+}
+
+.footer-container {
+    .logo-container {
+            border: 0.5px solid rgba(255, 255, 255, 0.5);
+
+            @media screen and (max-width: 450px) {
+                width: 128px;
+                height: 23px;
+                padding: 0;
+                border: none;
+                grid-template-columns: repeat(10, 1fr);
+                grid-template-rows: repeat(1, 1fr);
+
+                .logo {
+                    grid-row: 1;
+                    grid-column: 1 / 11;
+                }
+
+                .bamboo {
+                    grid-row: 1;
+                    grid-column: 7;
+                    margin: 0;
+                    margin-right: 7px;
+                }
+            }
+        }
 }
 
 .subscription-section {
@@ -1514,7 +1907,7 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         margin-right: 32px;
     }
 
-    @media screen and (max-width: 999px) {
+    @media screen and (max-width: 990px) {
         grid-column: 7 / 14;
         margin-right: 0;
         place-self: start end;
@@ -1571,9 +1964,9 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
             height: 42px;
             margin-left: 10px;
             background: #F1F3F2;
-            border: 1px solid #4B9200;
+            border: 1px solid #333B41;
             border-radius: 5px;
-            @include robotoFont($height: 140%, $color: #4b9200);
+            @include robotoFont($height: 140%, $color: #333B41);
 
             &:hover, &:active {
                 cursor: pointer;
@@ -1593,6 +1986,20 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     @media screen and (max-width:800px) {
         grid-row: 1 / 5;
         grid-column: 13 / span 1;
+    }
+
+    @media screen and (max-width:630px) {
+        flex-direction: column;
+        grid-row: 1 / 5;
+        grid-column: 13 / span 1;
+    }
+
+    @media screen and (max-width:450px) {
+        place-self: start center;
+        flex-direction: row;
+        grid-row: 2;
+        grid-column: 1;
+        gap: 30px;
     }
 
 
@@ -1667,7 +2074,7 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         place-self: start;
     }
 
-    @media screen and (max-width: 999px) {
+    @media screen and (max-width: 990px) {
         margin-right: 0px;
         margin-left: 25px;
         grid-column: 2 / 10;
@@ -1680,6 +2087,14 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
         grid-row: 6 / 7;
         grid-column: 1 / 8;
         place-self: start;
+    }
+
+    @media screen and (max-width: 450px) {
+        margin-right: 0px;
+        margin-left: 0px;
+        grid-row: 6;
+        grid-column: 1;
+        place-self: end center;
     }
 
 }
@@ -1695,13 +2110,27 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
             padding-left: 25px;
     }
 
-    @media screen and (max-width:999px) {
+    @media screen and (max-width:990px) {
         grid-column: 10 / span 4;
     }
 
     @media screen and (max-width:800px) {
         grid-column: 10 / span 4;
         grid-row: 5 / span 2;
+    }
+
+    @media screen and (max-width:630px) {
+        grid-column: 1 / span 4;
+        grid-row: 4 / span 2;
+        place-self: center start;
+        padding-left: 0;
+    }
+
+    @media screen and (max-width:450px) {
+        margin-top: 0px;
+        grid-column: 1;
+        grid-row: 4 / span 2;
+        place-self: end;
     }
 }
 
@@ -1720,9 +2149,27 @@ $greencolor: linear-gradient(#4B9200, #4B9200);
     }
 
     @media screen and (max-width: 800px) {
+        width: 100%;
         display: block;
         position: fixed;
-        z-index: 10;
+        z-index: 20;
+    }
+}
+
+.burger-icon {
+    @media screen and (max-width: 800px) {
+            display: inline-block;
+
+            cursor: pointer;
+
+        .burger-element, .burger-element, .burger-element {
+          width: 18px;
+          height: 2px;
+          border: none;
+          background-color: white;
+          margin: 2px 0;
+          transition: 0.4s;
+        }
     }
 }
 
