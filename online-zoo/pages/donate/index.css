@@ -1,4 +1,12 @@
 body {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s;
+}
+
+body {
   background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
 }
 
@@ -1098,6 +1106,24 @@ body {
   flex-wrap: wrap;
   transition: all 0.5 linear;
 }
+.step:nth-child(4) {
+  display: none;
+}
+@media screen and (max-width: 1220px) {
+  .step:nth-child(4) {
+    display: flex;
+  }
+}
+@media screen and (max-width: 800px) {
+  .step:nth-child(4) {
+    display: none;
+  }
+}
+@media screen and (max-width: 1220px) {
+  .step:nth-child(3) {
+    display: none;
+  }
+}
 .step:hover .step-mark {
   transform: scale(1.1);
   background-color: #E47209;
@@ -1182,25 +1208,11 @@ body {
   .price-bar {
     width: 97%;
   }
-  .price-bar .price-item:nth-child(7) {
-    color: #FE9013;
-  }
 }
 @media screen and (max-width: 460px) {
   .price-bar {
     width: 95%;
     margin: 10px;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .step:nth-child(7) {
-    border-radius: 50%;
-    border: 1px solid #FE9013;
-  }
-  .step:nth-child(7) .step-radius {
-    border-radius: 50%;
-    border: 1px solid #FE9013;
   }
 }
 
@@ -1282,13 +1294,15 @@ body {
   border: 1px solid #929699;
   outline: none;
 }
-.price-input:valid:focus {
+.price-input:valid {
   border: 1px solid #4B9200;
   color: #4B9200;
+  background-image: url(./../../assets/dollar_green.svg);
 }
 .price-input:invalid:focus {
   border: 1px solid #D31414;
   color: #D31414;
+  background-image: url(./../../assets/dollar_red.svg);
 }
 
 input::-webkit-outer-spin-button,
@@ -1469,6 +1483,10 @@ input[type=number] {
 @media screen and (max-width: 800px) {
   .burger-icon {
     display: inline-block;
+    right: 13px;
+    top: 11px;
+    position: fixed;
+    z-index: 110;
     cursor: pointer;
   }
   .burger-icon .burger-element, .burger-icon .burger-element, .burger-icon .burger-element {
@@ -1479,4 +1497,89 @@ input[type=number] {
     margin: 2px 0;
     transition: 0.4s;
   }
+}
+
+.open {
+  z-index: 111;
+  cursor: pointer;
+}
+.open .burger-element:nth-child(2) {
+  opacity: 0;
+}
+.open .burger-element:first-child {
+  background-color: black;
+  transform: translate(0, 5px) rotate(-45deg);
+}
+.open .burger-element:last-child {
+  background-color: black;
+  transform: translate(0, -3px) rotate(45deg);
+}
+
+.overlay {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: all 0.4s;
+  z-index: -1;
+}
+
+.overlay-visible {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5137254902);
+  z-index: 100;
+  transition: all 0.4s;
+}
+
+.burger-menu {
+  box-sizing: border-box;
+  display: none;
+}
+@media screen and (max-width: 800px) {
+  .burger-menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    transform: translateY(-100%);
+    background-color: white;
+    padding: 10px;
+    z-index: 101;
+    transition: all 0.5s ease-in-out;
+  }
+  .burger-menu__opened {
+    top: 0;
+    transform: translateY(0);
+  }
+  .burger-menu .navigation-container {
+    display: flex;
+  }
+  .burger-menu .navigation-container .navigation .navigation-list {
+    margin: 30.4px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 15px;
+  }
+  .burger-menu .navigation-container .navigation .navigation-list li a {
+    color: black;
+    line-height: 140%;
+  }
+}
+.burger-menu .logo-container {
+  border: 1px solid #FE9013;
+  box-sizing: border-box;
+  width: 65.6px;
+  height: 41.6px;
+  padding: 1.9px;
+  margin: 0;
+}
+.burger-menu .logo-container .logo {
+  color: #FE9013;
+  font-size: 15.21px;
+}
+.burger-menu .logo-container .bamboo {
+  background-image: url("./../../assets/bamboo_orange.svg");
 }/*# sourceMappingURL=index.css.map */
