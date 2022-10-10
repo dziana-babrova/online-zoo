@@ -1104,7 +1104,7 @@ body {
         background: $greencolor;
     }
 
-    &.disabled {
+    &:disabled {
         pointer-events: none;
         background:rgba(196, 196, 196, 0.5);
     }

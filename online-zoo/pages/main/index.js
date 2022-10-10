@@ -65,7 +65,7 @@ let locationsArray = [
 const swiper = new Swiper(".swiper", {
   direction: "horizontal",
   loop: true,
-  speed: 500,
+  speed: 700,
 
   simulateTouch: false,
   allowTouchMove: true,
@@ -98,6 +98,26 @@ const swiper = new Swiper(".swiper", {
 const RIGHT_ARROW = document.querySelector(".arrow-right");
 const LEFT_ARROW = document.querySelector(".arrow-left");
 const CAROUSEL_SECTION = document.querySelector(".carousel-section");
+const SWIPER_WRAPPER = document.querySelector(".swiper-wrapper");
+
+RIGHT_ARROW.addEventListener("click", function () {
+    RIGHT_ARROW.disabled = true;
+
+    SWIPER_WRAPPER.addEventListener("transitionend", function () {
+        RIGHT_ARROW.disabled = false;
+        generateImages();
+})
+})
+
+LEFT_ARROW.addEventListener("click", function () {
+  LEFT_ARROW.disabled = true;
+
+    SWIPER_WRAPPER.addEventListener("transitionend", function () {
+
+        LEFT_ARROW.disabled = false;
+        generateImages();
+  });
+});
 
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -143,12 +163,6 @@ function generateImages() {
 }
 
 generateImages();
-RIGHT_ARROW.addEventListener("click", function () {
-  setTimeout(generateImages, 600);
-});
-LEFT_ARROW.addEventListener("click", function () {
-  setTimeout(generateImages, 600);
-});
 
 // Testimonials slider //
 
@@ -208,17 +222,13 @@ const CROSS_ICON = document.querySelector(".popover-crossicon");
 
 TESTIMONIALS.forEach((element, index) => {
     element.addEventListener("click", function () {
-      TESTIMONIAL_POPOVER.classList.toggle("testimonial-popover__opened");
-      OVERLAY.classList.toggle("overlay-visible");
-      TESTIMONIAL_POPOVER.querySelector(".testimonial-border").innerHTML = TESTIMONIALS[index].innerHTML;
+        if (window.innerWidth <= 800) {
+            TESTIMONIAL_POPOVER.classList.toggle("testimonial-popover__opened");
+            OVERLAY.classList.toggle("overlay-visible");
+            TESTIMONIAL_POPOVER.querySelector(".testimonial-border").innerHTML = TESTIMONIALS[index].innerHTML;
+        }
     });
 })
-
-// TESTIMONIAL.addEventListener("click", function () {
-//     TESTIMONIAL_POPOVER.classList.toggle("testimonial-popover__opened");
-//     OVERLAY.classList.toggle("overlay-visible");
-//     TESTIMONIAL_POPOVER.querySelector(".testimonial-border").innerHTML = TESTIMONIALS[1].innerHTML;
-// });
 
 CROSS_ICON.addEventListener("click", function () {
     TESTIMONIAL_POPOVER.classList.remove("testimonial-popover__opened");

@@ -53,9 +53,10 @@ STEPS_RADIUS2_COLLECITON.forEach((element, index) => {
 });
 
 PRICE_INPUT.addEventListener("input", function (e) {
-    STEPS_RADIUS1_COLLECITON.forEach((element) => element.classList.remove("step-active"));
-    STEPS_RADIUS2_COLLECITON.forEach((element) => element.classList.remove("step-active"));
-    SUM_COLLECTION.forEach((element) => element.classList.remove("price-selected"));
+  if (PRICE_INPUT.value <= 5000) {
+        STEPS_RADIUS1_COLLECITON.forEach((element) => element.classList.remove("step-active"));
+        STEPS_RADIUS2_COLLECITON.forEach((element) => element.classList.remove("step-active"));
+        SUM_COLLECTION.forEach((element) => element.classList.remove("price-selected"));
 
     switch (PRICE_INPUT.value) {
       case "25":
@@ -112,6 +113,7 @@ PRICE_INPUT.addEventListener("input", function (e) {
         SUM_COLLECTION[0].classList.add("price-selected");
         break;
     }
+  }
 
     this.value = this.value.substr(0, 4);
 

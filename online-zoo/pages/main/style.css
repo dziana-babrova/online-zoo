@@ -1193,7 +1193,7 @@ body {
 .arrow:active {
   background: linear-gradient(#4B9200, #4B9200);
 }
-.arrow.disabled {
+.arrow:disabled {
   pointer-events: none;
   background: rgba(196, 196, 196, 0.5);
 }
