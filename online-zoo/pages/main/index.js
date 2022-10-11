@@ -68,7 +68,7 @@ const swiper = new Swiper(".swiper", {
   speed: 700,
 
   simulateTouch: false,
-  allowTouchMove: true,
+  allowTouchMove: false,
   slidesPerGroup: 1,
 
   slidesPerView: 1,
@@ -79,7 +79,7 @@ const swiper = new Swiper(".swiper", {
 
   preventInteractionOnTransition: true,
   disableOnInteraction: true,
-  loopPreventsSlide: true,
+    loopPreventsSlide: true,
 
   navigation: {
     nextEl: ".arrow-right",
@@ -165,6 +165,10 @@ function generateImages() {
 generateImages();
 
 // Testimonials slider //
+const POSITIONER = document.querySelector(".positioner");
+let positionerWidth = POSITIONER.offsetWidth;
+let scrollablePositioner = positionerWidth * 0.128;
+console.log(scrollablePositioner);
 
 const testimonialSwiper = new Swiper(".testimonials-section", {
   enabled: false,
@@ -179,6 +183,7 @@ const testimonialSwiper = new Swiper(".testimonials-section", {
 
   spaceBetween: 0,
 
+  snapOnRelease: true,
   preventInteractionOnTransition: true,
   disableOnInteraction: true,
   loopPreventsSlide: true,
@@ -187,11 +192,6 @@ const testimonialSwiper = new Swiper(".testimonials-section", {
   wrapperClass: "testimonials-wrapper",
   slideClass: "testimonial-border",
   simulateTouch: false,
-
-  scrollbar: {
-    el: ".positioner",
-    draggable: true,
-  },
 
   breakpoints: {
     991: {
@@ -208,8 +208,21 @@ const testimonialSwiper = new Swiper(".testimonials-section", {
 });
 
 window.addEventListener("resize", function () {
-  console.log("resized");
   testimonialSwiper.slideTo(0, 300, true);
+  POSITIONER.value = "0";
+  if (window.innerWidth < 1221) {
+    POSITIONER.max = 8;
+  } else {
+    POSITIONER.max = 7;
+  }
+});
+
+function changePosition() {
+  testimonialSwiper.slideTo(POSITIONER.value, 200, true);
+}
+
+POSITIONER.addEventListener("input", function () {
+  setTimeout(changePosition, 200);
 });
 
 
@@ -223,8 +236,8 @@ const CROSS_ICON = document.querySelector(".popover-crossicon");
 TESTIMONIALS.forEach((element, index) => {
     element.addEventListener("click", function () {
         if (window.innerWidth <= 800) {
-            TESTIMONIAL_POPOVER.classList.toggle("testimonial-popover__opened");
-            OVERLAY.classList.toggle("overlay-visible");
+            TESTIMONIAL_POPOVER.classList.add("testimonial-popover__opened");
+            OVERLAY.classList.add("overlay-visible");
             TESTIMONIAL_POPOVER.querySelector(".testimonial-border").innerHTML = TESTIMONIALS[index].innerHTML;
         }
     });
