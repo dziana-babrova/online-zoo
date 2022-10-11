@@ -170,6 +170,12 @@ let positionerWidth = POSITIONER.offsetWidth;
 let scrollablePositioner = positionerWidth * 0.128;
 console.log(scrollablePositioner);
 
+  if (window.innerWidth < 1221) {
+    POSITIONER.max = 8;
+  } else {
+    POSITIONER.max = 7;
+  }
+
 const testimonialSwiper = new Swiper(".testimonials-section", {
   enabled: false,
   direction: "horizontal",
@@ -218,11 +224,11 @@ window.addEventListener("resize", function () {
 });
 
 function changePosition() {
-  testimonialSwiper.slideTo(POSITIONER.value, 200, true);
+  testimonialSwiper.slideTo(POSITIONER.value, 300, true);
 }
 
 POSITIONER.addEventListener("input", function () {
-  setTimeout(changePosition, 200);
+  setTimeout(changePosition, 300);
 });
 
 

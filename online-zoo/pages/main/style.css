@@ -1835,6 +1835,7 @@ body {
   overflow: hidden;
   overflow-y: visible;
   box-sizing: border-box;
+  transition: all 10s linear;
 }
 @media screen and (max-width: 1220px) {
   .testimonials-section {
@@ -1863,6 +1864,7 @@ body {
   flex-wrap: nowrap;
   margin: 0 auto;
   margin-bottom: 21px;
+  transition: all 5s ease-in-out;
 }
 @media screen and (max-width: 990px) {
   .testimonials-wrapper {
@@ -2715,6 +2717,7 @@ input[type=range] {
   -webkit-appearance: none;
   margin: 10px 0;
   width: 100%;
+  transition: all 1s linear;
 }
 
 input[type=range]:focus {
