@@ -235,7 +235,7 @@ const CROSS_ICON = document.querySelector(".popover-crossicon");
 
 TESTIMONIALS.forEach((element, index) => {
     element.addEventListener("click", function () {
-        if (window.innerWidth <= 800) {
+        if (window.innerWidth <= 990) {
             TESTIMONIAL_POPOVER.classList.add("testimonial-popover__opened");
             OVERLAY.classList.add("overlay-visible");
             TESTIMONIAL_POPOVER.querySelector(".testimonial-border").innerHTML = TESTIMONIALS[index].innerHTML;
